@@ -9,10 +9,10 @@
 <meta name="Description" content="<?php echo $header['intro'];?>"/>
 <meta name="author" content="青岛尚禾维曼网络科技股份有限公司-高端网站建设-http://www.shmweb.cn" />
 <title><?php echo $header['title'];?></title>
-<link href="<?php echo GLOBAL_URL ?>favicon.ico" rel="shortcut icon">
+<link rel="icon" href="<?php echo static_file('favicon.ico'); ?>"type="image/x-icon">
 <script>
-	var STATIC_URL  = "<?php echo STATIC_URL  ?>" ;
-	var UPLOAD_URL  = "<?php echo UPLOAD_URL  ?>" ;
+	var STATIC_URL  = "<?php echo STATIC_URL ?>" ;
+	var UPLOAD_URL  = "<?php echo UPLOAD_URL ?>" ;
 	var GLOBAL_URL = "<?php echo GLOBAL_URL?>index.php/";
 	var SITE_URL = "<?php echo site_url().'/'; ?>";
 	var UPLOADDO_URL = "<?php echo SITE_URL.'upload/'?>";
@@ -28,7 +28,6 @@ echo static_file ( 'jquery.easing.1.3.js' );
 echo static_file ( 'jquery.transit.js' );
 echo static_file ( 'prefixfree.min.js' );
 echo static_file ( 'html5.js' );
-echo static_file ( 'shmfe.js' );
 echo static_file ( 'plug.preload.js' );
 
 echo static_file('web/js/revolve.js');

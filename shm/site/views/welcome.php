@@ -5,20 +5,13 @@
 </head>
 <body>
 	<h1 align="center">青岛尚禾维曼网络科技股份有限公司CMS系统</h1>
-	<?php
-	$getad=get_config_site('site','ad');
-	?>
-	<?php if($getad==1) {?>
-	<?php include_once VIEWS.'inc/ad.php'; ?>
-	<?php } ?>
 
-	<?php
-	$getqq=get_config_site('site','qq');
-	?>
-	<?php if($getqq==1) {?>
-	<?php include_once VIEWS.'inc/qq.php'; ?>
-	<?php } ?>
+	<?php include_once VIEWS.'inc/nav.php'; ?>
+    
+    <!--内容开始-->
 
+
+    <?php include_once VIEWS.'inc/footer.php'; ?>
 </body>
-<?php include_once VIEWS.'inc/footer.php'; ?>
+
 </html>
