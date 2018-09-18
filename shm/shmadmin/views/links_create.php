@@ -61,7 +61,7 @@
 							<span> <?php echo lang('upload_file') ?> </span>
 							<input class="fileupload" type="file" accept="">
 						</span>
-						<input type="hidden" name="photo" class="form-upload" data-more="0" value="<?php echo set_value('photo') ?>>">
+						<input type="hidden" name="photo" class="form-upload" data-more="0" value="<?php echo set_value('photo') ?>">
 						<input type="hidden" name="thumb" class="form-upload-thumb" value="<?php echo set_value('thumb') ?>">
 						<span class="help-inline">上传会替换原文件！</span>
 					</div>
