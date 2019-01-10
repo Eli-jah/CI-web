@@ -94,25 +94,25 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="Shortvideo.php?name=视频流解决方案">视频流解决方案</a>
+                    <a href="<?php echo site_url('media/index'); ?>?name=视频流解决方案">视频流解决方案</a>
                     <ul class="nav-list3">
                         <li>
-                            <a href="Shortvideo.php?name=视频流解决方案">智能美肤</a>
+                            <a href="<?php echo site_url('media/index'); ?>?name=视频流解决方案">智能美肤</a>
                         </li>
                         <li>
-                            <a href="Shortvideo.php?name=视频流解决方案">特效滤镜</a>
+                            <a href="<?php echo site_url('media/index'); ?>?name=视频流解决方案">特效滤镜</a>
                         </li>
                         <li>
-                            <a href="Shortvideo.php?name=视频流解决方案">人脸识别</a>
+                            <a href="<?php echo site_url('media/index'); ?>?name=视频流解决方案">人脸识别</a>
                         </li>
                         <li>
-                            <a href="Shortvideo.php?name=视频流解决方案">功能贴纸</a>
+                            <a href="<?php echo site_url('media/index'); ?>?name=视频流解决方案">功能贴纸</a>
                         </li>
                         <li>
-                            <a href="Shortvideo.php?name=视频流解决方案">直播弹幕</a>
+                            <a href="<?php echo site_url('media/index'); ?>?name=视频流解决方案">直播弹幕</a>
                         </li>
                         <li>
-                            <a href="Shortvideo.php?name=视频流解决方案">礼物连击</a>
+                            <a href="<?php echo site_url('media/index'); ?>?name=视频流解决方案">礼物连击</a>
                         </li>
                     </ul>
                 </li>
@@ -152,7 +152,7 @@
                 <ul class="nav-list4">
                     <li><a href="Ecommerce.php">电商平台解决方案</a></li>
                     <li><a href="<?php echo site_url('tourism/index'); ?>">旅游平台解决方案</a></li>
-                    <li><a href="Shortvideo.php">视频流解决方案</a></li>
+                    <li><a href="<?php echo site_url('media/index'); ?>">视频流解决方案</a></li>
                     <li><a href="Marketing.php.php">企业营销解决方案</a></li>
                 </ul>
             </li>
