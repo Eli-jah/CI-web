@@ -3,6 +3,9 @@
 
 class contact extends MY_Controller
 {
+    protected $seo_id;
+    protected $banner_id;
+
     protected $rules = array(
         "send" => array(
 //            array(
@@ -49,7 +52,7 @@ class contact extends MY_Controller
         )
     );
 
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->load->model('feedback_model', 'mfeedback');

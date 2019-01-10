@@ -1,18 +1,18 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 $config['oauth2']['weibo'] = array(
-	'name' => '新浪微博',
-	'id' => '',
-	'secret' => '',
-	'extra' => ''
-	);
+    'name' => '新浪微博',
+    'id' => '',
+    'secret' => '',
+    'extra' => ''
+);
 
 $config['oauth2']['qq'] = array(
-	'name' => 'QQ',
-	'id' => '',
-	'secret' => '',
-	'extra' => ''
-	);
+    'name' => 'QQ',
+    'id' => '',
+    'secret' => '',
+    'extra' => ''
+);
 
 // $config['oauth2']['baidu'] = array(
 //     'name' => '百度',

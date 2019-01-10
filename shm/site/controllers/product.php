@@ -3,6 +3,9 @@
 
 class product extends MY_Controller
 {
+    protected $seo_id;
+    protected $banner_id;
+
     function __construct()
     {
         parent::__construct();

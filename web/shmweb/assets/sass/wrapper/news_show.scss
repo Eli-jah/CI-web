@@ -1,0 +1,90 @@
+.news_show_content {
+    min-height: 500px;
+    position: relative;
+    padding-top: 80px;
+    background: url(../images/img/kejixian04.png) bottom no-repeat;
+    .news_content_title {
+        width: 1200px;
+        margin: auto;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 70px;
+        border-bottom: 2px solid #062c6a;
+        h4 {
+            color: #465883;
+            margin: auto;
+            margin-left: 0;
+        }
+        .new_date {
+            color: #8c8d95;
+            margin: auto;
+            margin-right: 0;
+            span {
+                display: inline-block;
+            }
+            .line {
+                display: inline-block;
+                width: 50px;
+                height: 1px;
+                background-color: #8c8d95;
+                position: relative;
+                top: -5px;
+            }
+        }
+    }
+    .news_content_info {
+        width: 1200px;
+        margin: auto;
+        margin-top: 70px;
+        overflow: hidden;
+        .info_img {
+            width: 100%;
+            margin-bottom: 30px;
+            img {
+                width: 100%;
+            }
+        }
+        .info_content {
+            font-size: 12px;
+            color: #8c8d95;
+            margin-bottom: 100px;
+            p {
+                line-height: 25px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .bgcanvas {
+        #particle {
+            position: absolute;
+            bottom: 5px;
+        }   
+    }
+    @media screen and ( min-width: 319px) and (max-width:799px){
+        padding-top: 60px;
+        .news_content_title {
+            width: 100%;
+            height: auto;
+            min-height: 70px;
+            flex-wrap: wrap;
+            h4 {
+                font-size: 16px;
+                margin: auto;
+                width: 100%;
+                padding: 0 20px;
+                margin-bottom: 10px;
+            }
+            .new_date {
+                margin: auto;
+                margin-right: 20px;
+            }
+        }
+        .news_content_info {
+            width: 100%;
+            padding: 0 20px;
+            margin-top: 30px;
+        }
+    }
+}

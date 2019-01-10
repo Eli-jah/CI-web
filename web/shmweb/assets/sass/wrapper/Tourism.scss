@@ -1,0 +1,441 @@
+.Tourism_content {
+    min-height: 300px;
+    position: relative;
+    padding-top: 80px;
+    .content_part {
+        width: 100%;
+        display: flex;
+        min-height: 630px;
+        flex-direction: row;
+        justify-content: space-around;
+        overflow: hidden;
+        &.content_part_1 {
+            background: url(../images/img/01_bgbg.jpg) center no-repeat;
+            background-size: cover;
+            .text_content {
+                width: 440px;
+                color: $white;
+                margin: auto;
+                margin-right: 0;
+                h3 {
+                    font-size: 30px;
+                    font-weight: bold;
+                    padding: 0 4px;
+                    span {
+                        width: 100%;
+                    }
+                }
+                p {
+                    opacity: 0.7;
+                    width: 100%;
+                    font-size: 12px;
+                    line-height: 30px;
+                }
+            }
+            .img_content {
+                width: 35%;
+                text-align: center;
+                margin: auto;
+                margin-left: 150px;
+                margin-bottom: 0;
+            }
+            @media screen and (max-width:1580px){
+                .img_content {
+                    width: 50%;
+                    margin: auto;
+                    margin-bottom: 0;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            @media screen and ( min-width: 319px) and (max-width:799px){
+                flex-direction: column;
+                .text_content {
+                    width: 100%;
+                    h3 {
+                        font-size: 20px;
+                        padding: 0 20px;
+                    }
+                    p {
+                        padding: 0 20px;
+                    }
+                    
+                }
+                .img_content {
+                    margin: auto;
+                    width: 90%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }   
+        }
+        &.content_part_2 {
+            height: 940px;
+//          flex-direction: column;
+            flex-wrap: wrap;
+            .content_part_title {
+                width: 100%;
+                 color: $Theme_color;
+                 text-align: center;
+                 position: relative;
+                 margin-top: 50px;
+                 h3 {
+                     font-size: 30px;
+                     font-weight: bold;
+                 }
+                 .Grader {
+                     width: 120px;
+                     height: 1px;
+                 }
+                 p {
+                     font-size: 20px;
+                 }
+            }
+            .content_part_img {
+                width: 100%;
+                position: relative;
+                display: flex;
+                .content_part_img_left {
+                    margin: auto;
+                    margin-right: 5%;
+                    width: 18%;
+                    ul {
+                        li {
+                            height: 30px;
+                            line-height: 30px;
+                            margin-bottom: 60px;
+                            text-align: center;
+                            cursor: pointer;
+                            .Grader {
+                                @include transition(all,1s);
+                                width: 0px;
+                                min-width: 0;
+                                height: 1px;
+                            }
+                            .left_swiper_content {
+                                @include transition(all,1s);
+                                font-size: 14px;
+                                color: $Theme_color;
+                                margin: auto 20px;
+                                opacity: 0.5;
+                                display: inline-block;
+                                max-width: 120px;
+                                text-align: left;
+                            }
+                            &.active {
+                                .Grader {
+                                    width: 76px;
+                                }
+                                .left_swiper_content {
+                                    transform: scale(1.4) translateZ(0);
+//                                  font-size: 20px;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }   
+                }
+                .content_part_img_right {
+                    height: 650px;
+                    width: 60%;
+                    margin: auto;
+                    margin-right: 0;
+                    margin-bottom: 0;
+                    margin-left: 0px;
+                    position: relative;
+                    ul {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        overflow: hidden;
+                        li {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            opacity: 0;
+                            right: -150%;
+                            @include transition(all,1s);
+                            .for_write_effect {
+                                height: 0;
+                                width: 270px;
+                                position: absolute;
+                                color: $white;
+                                border-left: 1px solid $white;
+                                left: 50px;
+                                top: 100px;
+                                overflow: hidden;
+                                @include transition(all,5s);
+                                animation-delay: 2s;
+                                h2 {
+                                    font-size: 40px;
+                                    margin-top: 0;
+                                    margin-left: 15px;
+                                    margin-bottom: 15px;
+                                }
+                                p {
+                                    font-size: 12px;
+                                    opacity: 0.7;
+                                    margin-left: 15px;
+                                }
+                            }
+                            .img_right_box {
+                                width: 100%;
+                                height: 100%;
+                                overflow: hidden;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }   
+                            }
+                            &.active {
+                                opacity: 1;
+                                right: 0;
+                                @include transition(all,1s);
+                                .for_write_effect {
+                                    height: 366px;
+                                    animation-delay: 2s;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            .content_part_img_mobile {
+                display: none;
+                color: $Theme_color;
+                padding: 0 20px;
+                ul {
+                    li {
+                        .for_write_effect {
+                            h2 {
+                                font-size: 20px;
+                            }
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width:1580px){
+                .content_part_img {
+                    .content_part_img_left {
+                        width: 25%;
+                    }  
+                    .content_part_img_right {
+                        width: 65%;
+                    } 
+                }
+            }
+            @media screen and ( min-width: 319px) and (max-width:799px){
+                .content_part_title {
+                    height: 100px;
+                    margin-top: 10px;
+                    h3 {
+                        font-size: 20px;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
+                }
+                .content_part_img {
+                    display: none;
+                }
+                .content_part_img_mobile {
+                    display: block;
+                }
+            }   
+        }
+        &.content_part_3 {
+            height: 1000px;
+            background: url(../images/img/03.3_bg.jpg) center no-repeat;
+            background-size: cover;
+            position: relative;
+            .img_content_leftDown {
+                width: 1200px;
+                height: 800px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                @include transition(all,1s);
+                &:before {
+                    content: '';
+                    width: 860px;
+                    height: 1px;
+                    background-color: $white;
+                    position: absolute;
+                    top: -100px;
+                    left: 0;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .img_content_rightUp {
+                width: 700px;
+                height: 665px;
+                position: absolute;
+                background: url(../images/img/03.1_bg.png) center no-repeat;
+                background-size: cover;
+                top: 100px;
+                left: 860px;
+                @include transition(all,1s);
+                &:after {
+                    content: '';
+                    width: 360px;
+                    height: 1px;
+                    background-color: $white;
+                    position: absolute;
+                    bottom: -100px;
+                    right: 0;
+                }
+                .travel_title {
+                    width: 400px;
+                    height: 150px;
+                    background: url(../images/img/Travel.png) center no-repeat;
+                    margin: auto;
+                    margin-top: 80px;
+                    margin-bottom: 90px;
+                    position: relative;
+                    h3 {
+                        font-size: 30px;
+                        text-align: center;
+                        color: $Theme_color;
+                        margin: auto;
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        right: 0;
+                        margin: auto;
+                        font-weight: bold;
+                    }
+                    .Grader {
+                        width: 400px;
+                        position: absolute;
+                        left: 0;
+                        bottom: -35px;
+                        height: 1px;
+                    }
+                }
+                .travel_content {
+                    width: 400px;
+                    margin: auto;
+                    p {
+                        font-size: 14px;
+                        color: $Theme_color;
+                        line-height: 30px;
+                    }
+                }
+            }
+            .img_content_rightUp_mobile {
+                display: none;
+            }
+            @media screen and (max-width:1580px){
+                .img_content_leftDown {
+                    width: 900px;
+                }
+                .img_content_rightUp {
+                    left: 600px;
+                    width: 600px;
+                    &:after {
+                        width: 300px;
+                    }
+                }
+            }
+            @media screen and ( min-width: 319px) and (max-width:799px){
+                height: 500px;
+                .img_content_rightUp_mobile {
+                    display: block;
+                    .travel_title {
+                        position: relative;
+                        width: 100%;
+                        height: 50px;
+                        margin: auto;
+                        margin-top: 20px;
+                        margin-bottom: 40px;
+                        h3 {
+                            font-size: 20px;
+                            text-align: center;
+                            color: $white;
+                            margin: auto;
+                            position: absolute;
+                            bottom: 10px;
+                            left: 10px;
+                            right: 0;
+                            margin: auto;
+                            font-weight: bold;
+                        }
+                        .Grader {
+                            width: 100%;
+                            position: absolute;
+                            left: 0;
+                            bottom: -35px;
+                            height: 1px;
+                        }
+                    }
+                    .travel_content {
+                        width: 100%;
+                        margin: auto;
+                        padding: 0 25px;
+                        p {
+                            font-size: 14px;
+                            color: $white;
+                            line-height: 30px;
+                        }
+                    }
+                    .travel_img {
+                        width: 100%;
+                        margin: auto;
+                        margin-top: 50px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+                .img_content_leftDown {
+                    display: none;
+                }
+                .img_content_rightUp {
+                    display: none;
+                }
+            }   
+        }
+    }
+    @media screen and ( min-width: 319px) and (max-width:799px){
+        padding-top: 60px;
+    }   
+}
+.fadeInleftDown {
+    animation-name: fadeInleftDown;
+}
+.fadeInrightUp {
+    animation-name: fadeInrightUp;
+}
+@keyframes fadeInleftDown {
+  from {
+    opacity: 0;
+    transform: translate3d(-2000px, 2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInrightUp {
+  from {
+    opacity: 0;
+    transform: translate3d(2000px, -2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

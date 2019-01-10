@@ -1,0 +1,27 @@
+.banner {
+    width: 100%;
+    margin-top: 80px;
+    transition: all .2s;
+    @media screen and (max-width: 1199px) {
+        margin-top: 50px;
+//      height: 200px;
+    }
+    .swiper-slide {
+        a {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            @media screen and (max-width: 1199px) {
+//              height: 200px;
+            }
+            img {
+                width: 100%;
+                transition: all .2s;
+                @media screen and (max-width: 1199px) {
+                    width: 130%;
+                    margin-left: -15%;
+                }
+            }      
+        }
+    }
+}

@@ -1,0 +1,77 @@
+footer {
+    width: 100%;
+    position: relative;
+    height: auto !important;
+    background: $footer_bg_color;
+    color: $footer_word_color;
+    .fp-tableCell {
+        display: flex;
+    }
+    #footer-text{ 
+        width: 100%;
+        height: 380px;
+        padding: 0 185px;
+        padding-top: 40px;
+        .footer_up {
+            display: flex;
+            justify-content: space-between;
+            >ul {
+                display: flex;
+                width: 600px;
+                justify-content: space-between;
+                >li {
+                    color: #797a85;
+                    font-size: 12px;
+                    span {
+                        display: block;
+                        color: #c6c6d1;
+                        margin-bottom: 20px;
+                    }
+                    ul {
+                        li {
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+            .erwei_num {
+                display: flex;
+                flex-direction: column;
+                .footer_logo {
+                    width: 120px;
+                    height: 22px;
+                    margin-bottom: 20px;
+                }
+                .footer_erweima {
+                    width: 120px;
+                    height: 120px;
+                }
+                span {
+                    display: block;
+                    font-size: 12px;
+                    margin: 10px 0;
+                }
+            }
+        }
+        .footer_down {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #454f62;
+            padding-top: 20px;
+            p {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+        }
+        @media screen and ( min-width: 319px) and (max-width:799px){
+            padding: 0 10px;
+            height: 150px;
+            .footer_up {
+                display: none;
+            }
+            .iso {
+                display: none;
+            }
+        }
+    }
+}
