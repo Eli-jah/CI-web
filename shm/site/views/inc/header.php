@@ -24,7 +24,7 @@
 <header id="header" class="normal_page">
     <div class="header_left">
         <div class="logo_box">
-            <a href="index.php">
+            <a href="<?php echo site_url(); ?>">
                 <img src="/web/shmweb/assets/images/white_logo.png" class="img1">
                 <img src="/web/shmweb/assets/images/color_logo.png" class="img2">
             </a>
@@ -42,7 +42,7 @@
     <div class="header_menu_lists" id="lists_area">
         <ul class="nav-list1">
             <li class="active">
-                <a href="index.php?name=首页">首页</a>
+                <a href="<?php echo site_url(); ?>?name=首页">首页</a>
             </li>
             <li class="more">
                 <a href="javascript:void(0)">解决方案 &or;</a>
@@ -71,25 +71,25 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="Tourism.php?name=旅游平台解决方案">旅游平台解决方案</a>
+                    <a href="<?php echo site_url('tourism/index'); ?>?name=旅游平台解决方案">旅游平台解决方案</a>
                     <ul class="nav-list3">
                         <li>
-                            <a href="Tourism.php?name=旅游平台解决方案">景点展示</a>
+                            <a href="<?php echo site_url('tourism/index'); ?>?name=旅游平台解决方案">景点展示</a>
                         </li>
                         <li>
-                            <a href="Tourism.php?name=旅游平台解决方案">景区攻略咨询</a>
+                            <a href="<?php echo site_url('tourism/index'); ?>?name=旅游平台解决方案">景区攻略咨询</a>
                         </li>
                         <li>
-                            <a href="Tourism.php?name=旅游平台解决方案">酒店系统</a>
+                            <a href="<?php echo site_url('tourism/index'); ?>?name=旅游平台解决方案">酒店系统</a>
                         </li>
                         <li>
-                            <a href="Tourism.php?name=旅游平台解决方案">签证代办平台</a>
+                            <a href="<?php echo site_url('tourism/index'); ?>?name=旅游平台解决方案">签证代办平台</a>
                         </li>
                         <li>
-                            <a href="Tourism.php?name=旅游平台解决方案">购票平台</a>
+                            <a href="<?php echo site_url('tourism/index'); ?>?name=旅游平台解决方案">购票平台</a>
                         </li>
                         <li>
-                            <a href="Tourism.php?name=旅游平台解决方案">特色电商</a>
+                            <a href="<?php echo site_url('tourism/index'); ?>?name=旅游平台解决方案">特色电商</a>
                         </li>
                     </ul>
                 </li>
@@ -146,12 +146,12 @@
             <span class="btn-line"></span>
         </button>
         <ul class="nav-list1">
-            <li><a href="index.php">首页</a></li>
+            <li><a href="<?php echo site_url(); ?>">首页</a></li>
             <li class="mobile_more">
                 <a href="javascript:void(0)">解决方案</a>
                 <ul class="nav-list4">
                     <li><a href="Ecommerce.php">电商平台解决方案</a></li>
-                    <li><a href="Tourism.php">旅游平台解决方案</a></li>
+                    <li><a href="<?php echo site_url('tourism/index'); ?>">旅游平台解决方案</a></li>
                     <li><a href="Shortvideo.php">视频流解决方案</a></li>
                     <li><a href="Marketing.php.php">企业营销解决方案</a></li>
                 </ul>

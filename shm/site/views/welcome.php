@@ -1,4 +1,4 @@
-<?php require_once VIEWS.'inc/header.php' ?>
+<?php require_once VIEWS . 'inc/header.php' ?>
 <div class="index_content">
     <ul id="menu">
         <li data-menuanchor="page1" class="page1 active"><a href="#page1"><span
