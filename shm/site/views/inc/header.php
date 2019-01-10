@@ -6,14 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link href="assets/images/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" href="assets/js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/js/animate.css/animate.min.css">
-    <link rel="stylesheet" href="assets/js/jquery.fancybox/jquery.fancybox.css">
-    <link rel="stylesheet" type="text/css" href="assets/js/swiper/css/swiper.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/js/fullPage/css/fullPage.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/fonts/iconfont.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="/web/shmweb/assets/images/favicon.ico" rel="shortcut icon">
+
+    <?php
+    echo static_file("assets/js/bootstrap/css/bootstrap.min.css");
+    echo static_file("assets/js/animate.css/animate.min.css");
+    echo static_file("assets/js/jquery.fancybox/jquery.fancybox.css");
+    echo static_file("assets/js/swiper/css/swiper.css");
+    echo static_file("assets/js/fullPage/css/fullPage.css");
+    echo static_file("assets/fonts/iconfont.css");
+    echo static_file("assets/css/style.css");
+    ?>
+
     <!--<script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?b1adbc20b757cd6750d05cbb489f30e7"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>-->
 </head>
 <body>
@@ -21,8 +25,8 @@
     <div class="header_left">
         <div class="logo_box">
             <a href="index.php">
-                <img src="assets/images/white_logo.png" class="img1">
-                <img src="assets/images/color_logo.png" class="img2">
+                <img src="/web/shmweb/assets/images/white_logo.png" class="img1">
+                <img src="/web/shmweb/assets/images/color_logo.png" class="img2">
             </a>
         </div>
         <div class="header_menu">
