@@ -42,11 +42,11 @@ class Welcome extends Base_Controller {
             if ((filemtime($shm_file_path) +60*60*24*30 -time() )> 0) {
                 $shm = file_get_contents($shm_file_path);
             }else{
-               $shm = file_get_contents("http://www.shmweb.cn/news.php?shm_notice/shmweb2013");
+               $shm = file_get_contents("http://www.sahereman.com/news.php?shm_notice/shmweb2013");
                file_put_contents($shm_file_path,$shm);
            }
        }else{
-           $shm = file_get_contents("http://www.shmweb.cn/news.php?shm_notice/shmweb2013");
+           $shm = file_get_contents("http://www.sahereman.com/news.php?shm_notice/shmweb2013");
            if (new_is_writeable(APPPATH.'cache')) {
             $fp=fopen("$shm_file_path", "w+");
             fclose($fp);

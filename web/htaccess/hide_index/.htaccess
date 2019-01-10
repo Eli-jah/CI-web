@@ -4,7 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|images|robots\.txt)
 RewriteRule ^(.*)$ index.php/$1 [L]
 
-ErrorDocument 403 http://www.shmweb.cn
+ErrorDocument 403 http://www.sahereman.com
 
 
 

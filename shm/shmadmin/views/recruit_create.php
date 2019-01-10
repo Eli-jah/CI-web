@@ -38,7 +38,7 @@ if(!empty($minfo)){
 		<div class="control-group">
 			<label class="control-label" for="email"> 邮箱 </label>
 			<div class="controls">
-				<input type="text" name="email" value="zhaochongxu@shmweb.cn" id="email">
+				<input type="text" name="email" value="zhaochongxu@sahereman.com" id="email">
 			</div>
 		</div>
 
