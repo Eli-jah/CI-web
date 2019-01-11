@@ -905,6 +905,7 @@ CREATE TABLE `shm_feedback` (
   `title` varchar(100) DEFAULT NULL COMMENT '标题',
   `content` text COMMENT '详细内容',
   `answer` text COMMENT '回答问题',
+  `company` varchar(100) DEFAULT NULL COMMENT '公司名称',
   `username` varchar(50) DEFAULT NULL COMMENT '用户名',
   `telphone` varchar(50) DEFAULT NULL COMMENT '电话',
   `fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_estonian_ci DEFAULT NULL COMMENT '传真',

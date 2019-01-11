@@ -9,6 +9,14 @@
 	<div class="boxed-inner seamless">
 
 		<div class="control-group">
+			<label for="company" class="control-label">公司名称：</label>
+			<div class="controls">
+				<?php echo $it['company'] ?>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+
+		<div class="control-group">
 			<label for="thename" class="control-label">用户名：</label>
 			<div class="controls">
 				<?php echo $it['username'] ?>

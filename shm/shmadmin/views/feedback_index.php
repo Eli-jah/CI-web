@@ -10,6 +10,7 @@
 			<thead>
 				<tr>
 					<th class="width-small"><input id='selectbox-all' type="checkbox" > </th>
+					<th>公司名称</th>
 					<th>用户名</th>
 					<th>手机</th>
 					<th>标题</th>
@@ -22,6 +23,7 @@
 				<?php foreach ($list as $v):?>
 					<tr data-id="<?php echo $v['id'] ?>" data-sort="<?php echo $v['sort_id'] ?>">
 						<td><input class="select-it" type="checkbox" value="<?php echo $v['id']; ?>" ></td>
+						<td> <?php echo $v['company'] ?> </td>
 						<td> <?php echo $v['username'] ?> </td>
 						<td> <?php echo $v['telphone'] ?> </td>
 						<td> <?php echo $v['title'] ?> </td>
