@@ -30,58 +30,6 @@ class Tourism extends MY_Controller
         $this->load->view('tourism/index', $data);
     }
 
-    // 景点展示
-    public function scenery($page = 2, $size = 6)
-    {
-        $data = $this->load($page, $size);
-        return json_encode($data);
-    }
-
-    // 景区攻略咨询
-    public function guide($id = '')
-    {
-        $data['banner'] = tag_photo(tag_single($this->banner_id, "photo"));
-        // tourism info
-        $data['info'] = $this->db->get_where('article', array('cid' => 21, 'audit' => 1, 'id' => $id))->row_array();
-        // click + 1
-        $click = $data['info']['click'];
-        $click++;
-        $update = array('click' => $click);
-        $this->db->where('id', $data['info']['id']);
-        $this->db->update('article', $update);
-        /*seo*/
-        $data['header'] = header_seoinfo($this->seo_id, 0);
-        $data['seo'] = $this->db->get_where('article', array('id' => $id))->row_array();//获取seo
-        // prev & next
-        $data['updown'] = $this->article_model->change_page($id, $cid = 21);
-
-        $this->load->view('tourism/show', $data);
-    }
-
-    // 酒店系统
-    public function hotel()
-    {
-        $this->index();
-    }
-
-    // 签证代办平台
-    public function visa()
-    {
-        $this->index();
-    }
-
-    // 购票平台
-    public function ticket()
-    {
-        $this->index();
-    }
-
-    // 特色电商
-    public function eshop()
-    {
-        $this->index();
-    }
-
     protected function load($page = 1, $size = 6)
     {
         $data['tourism'] = array();

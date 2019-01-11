@@ -7,7 +7,7 @@ class Media extends MY_Controller
     protected $seo_id;
     protected $banner_id;
 
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
 

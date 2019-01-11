@@ -48,25 +48,25 @@
                 <a href="javascript:void(0)">解决方案 &or;</a>
             </li>
             <li>
-                <a href="news.php?name=资讯中心">资讯中心</a>
+                <a href="<?php echo site_url('news/index'); ?>?name=资讯中心">资讯中心</a>
             </li>
             <li>
-                <a href="aboutUs.php?name=关于我们">关于我们</a>
+                <a href="<?php echo site_url('about/index'); ?>?name=关于我们">关于我们</a>
             </li>
         </ul>
         <div class="child_menu" id="child_menu">
             <ul class="nav-list2">
                 <li class="active">
-                    <a href="Ecommerce.php?name=电商平台解决方案">电商平台解决方案</a>
+                    <a href="<?php echo site_url('service/ecommerce'); ?>?name=电商平台解决方案">电商平台解决方案</a>
                     <ul class="nav-list3">
                         <li>
-                            <a href="Ecommerce.php?name=电商平台解决方案">产品架构</a>
+                            <a href="<?php echo site_url('service/ecommerce'); ?>?name=电商平台解决方案">产品架构</a>
                         </li>
                         <li>
-                            <a href="Ecommerce.php?name=电商平台解决方案">营销活动</a>
+                            <a href="<?php echo site_url('service/ecommerce'); ?>?name=电商平台解决方案">营销活动</a>
                         </li>
                         <li>
-                            <a href="Ecommerce.php?name=电商平台解决方案">第三方接口合作</a>
+                            <a href="<?php echo site_url('service/ecommerce'); ?>?name=电商平台解决方案">第三方接口合作</a>
                         </li>
                     </ul>
                 </li>
@@ -117,22 +117,22 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="Marketing.php?name=企业营销解决方案">企业营销解决方案</a>
+                    <a href="<?php echo site_url('service/marketing'); ?>?name=企业营销解决方案">企业营销解决方案</a>
                     <ul class="nav-list3">
                         <li>
-                            <a href="Marketing.php?name=企业营销解决方案">品牌网站建设</a>
+                            <a href="<?php echo site_url('service/marketing'); ?>?name=企业营销解决方案">品牌网站建设</a>
                         </li>
                         <li>
-                            <a href="Marketing.php?name=企业营销解决方案">微信公众号运营</a>
+                            <a href="<?php echo site_url('service/marketing'); ?>?name=企业营销解决方案">微信公众号运营</a>
                         </li>
                         <li>
-                            <a href="Marketing.php?name=企业营销解决方案">微信公众号搭建</a>
+                            <a href="<?php echo site_url('service/marketing'); ?>?name=企业营销解决方案">微信公众号搭建</a>
                         </li>
                         <li>
-                            <a href="Marketing.php?name=企业营销解决方案">品牌策划</a>
+                            <a href="<?php echo site_url('service/marketing'); ?>?name=企业营销解决方案">品牌策划</a>
                         </li>
                         <li>
-                            <a href="Marketing.php?name=企业营销解决方案">新媒体营销</a>
+                            <a href="<?php echo site_url('service/marketing'); ?>?name=企业营销解决方案">新媒体营销</a>
                         </li>
                     </ul>
                 </li>
@@ -150,14 +150,14 @@
             <li class="mobile_more">
                 <a href="javascript:void(0)">解决方案</a>
                 <ul class="nav-list4">
-                    <li><a href="Ecommerce.php">电商平台解决方案</a></li>
+                    <li><a href="<?php echo site_url('service/ecommerce'); ?>">电商平台解决方案</a></li>
                     <li><a href="<?php echo site_url('tourism/index'); ?>">旅游平台解决方案</a></li>
                     <li><a href="<?php echo site_url('media/index'); ?>">视频流解决方案</a></li>
-                    <li><a href="Marketing.php.php">企业营销解决方案</a></li>
+                    <li><a href="<?php echo site_url('service/marketing'); ?>">企业营销解决方案</a></li>
                 </ul>
             </li>
-            <li><a href="news.php">资讯中心</a></li>
-            <li><a href="aboutUs.php">关于我们</a></li>
+            <li><a href="<?php echo site_url('news/index'); ?>">资讯中心</a></li>
+            <li><a href="<?php echo site_url('about/index'); ?>">关于我们</a></li>
         </ul>
     </div>
 </header>

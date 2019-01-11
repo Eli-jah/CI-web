@@ -18,8 +18,13 @@ class About extends MY_Controller
         $this->banner_id = 39;
     }
 
-    // 关于我们 + 公司简介 + 发展历程 + 联系我们
     public function index()
+    {
+        return $this->us();
+    }
+
+    // 关于我们 + 公司简介 + 发展历程 + 联系我们
+    public function us()
     {
         $this->seo_id = 40;
         $this->banner_id = 39;
@@ -30,6 +35,6 @@ class About extends MY_Controller
 
         $data['content'] = tag_single(40, 'content');
 
-        $this->load->view('about/index', $data);
+        $this->load->view('about/us', $data);
     }
 }
