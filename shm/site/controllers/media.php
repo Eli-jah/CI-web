@@ -29,40 +29,4 @@ class Media extends MY_Controller
 
         $this->load->view('media/index', $data);
     }
-
-    // 智能美肤
-    public function beautify()
-    {
-        $this->index();
-    }
-
-    // 特效滤镜
-    public function filter()
-    {
-        $this->index();
-    }
-
-    // 人脸识别
-    public function recognition()
-    {
-        $this->index();
-    }
-
-    // 功能贴纸
-    public function sticker()
-    {
-        $this->index();
-    }
-
-    // 直播弹幕
-    public function barrage()
-    {
-        $this->index();
-    }
-
-    // 礼物连击
-    public function gift()
-    {
-        $this->index();
-    }
 }
