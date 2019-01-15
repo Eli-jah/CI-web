@@ -38,7 +38,7 @@
             <span></span>
         </div>
         <div class="local_name">
-            <span>首页</span>
+            <span><?php echo $local_name ? $local_name : '首页'; ?></span>
         </div>
     </div>
     <!--头部右侧菜单-->

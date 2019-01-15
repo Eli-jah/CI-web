@@ -21,6 +21,9 @@ class Welcome extends MY_Controller
         // seo
         $data['header'] = header_seoinfo(0, 0);
 
+        // local name
+        $data['local_name'] = '首页';
+
         // banners
         $data['banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(2, 3))->get('page')->result_array();
         foreach ($data['banners'] as $key => $banner) {
