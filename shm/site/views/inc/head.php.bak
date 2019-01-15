@@ -38,7 +38,6 @@ echo static_file('jquery.cookie.js');
 echo static_file('tools.js');
 echo static_file('template.js');
 
-
 ?>
 
 

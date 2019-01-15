@@ -2,10 +2,13 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>尚禾维曼</title>
+    <title><?php echo $header['title']; ?></title>
+    <meta name="Keywords" content="<?php echo $header['tags']; ?>"/>
+    <meta name="Description" content="<?php echo $header['intro']; ?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="青岛尚禾维曼网络科技股份有限公司-高端网站建设-http://www.sahereman.com"/>
     <link href="/web/shmweb/assets/images/favicon.ico" rel="shortcut icon">
 
     <?php
