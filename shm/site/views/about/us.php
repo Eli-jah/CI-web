@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <p>24小时内回访人员马上联系您</p>
-                    <button>提交</button>
+                    <button class="submit">提交</button>
                 </div>
             </div>
             <div class="map_right">
