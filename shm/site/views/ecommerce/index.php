@@ -133,18 +133,18 @@
                     <h2>为什么选择我们</h2>
                 </div>
                 <div class="reason_lists">
-                    <?php foreach($why['banners'] as $banner): ?>
-                    <div class="reason_item">
-                        <div class="reason_item_img">
-                            <div class="img_left"></div>
-                            <div class="img_center">
-                                <img src="<?php echo $banner['photo']; ?>">
+                    <?php foreach ($why['banners'] as $banner): ?>
+                        <div class="reason_item">
+                            <div class="reason_item_img">
+                                <div class="img_left"></div>
+                                <div class="img_center">
+                                    <img src="<?php echo $banner['photo']; ?>">
+                                </div>
+                                <div class="img_right"></div>
                             </div>
-                            <div class="img_right"></div>
+                            <h3><?php echo $banner['intro']; ?></h3>
+                            <?php echo $banner['content']; ?>
                         </div>
-                        <h3><?php echo $banner['intro']; ?></h3>
-                        <?php echo $banner['content']; ?>
-                    </div>
                     <?php endforeach; ?>
                 </div>
             </div>

@@ -12,10 +12,9 @@ class Tourism extends MY_Controller
         parent::__construct();
 
         $this->load->helpers('uisite_helper');
-        $this->load->model('article_model');
 
-        $this->seo_id = 19;
-        $this->banner_id = 20;
+        $this->seo_id = 46;
+        $this->banner_id = 47;
     }
 
     // 旅游平台解决方案
@@ -23,25 +22,32 @@ class Tourism extends MY_Controller
     {
         // seo
         $data['header'] = header_seoinfo($this->seo_id, 0);
-        $data['banner'] = tag_photo(tag_single($this->banner_id, "photo"));
 
-        $data = $this->load(1, 6);
+        // local name
+        $data['local_name'] = '旅游平台解决方案';
+
+        // banners
+        $data['banner'] = $this->db->get_where('page', array('cid' => $this->banner_id))->row_array();
+        $data['banner']['photo'] = tag_photo($data['banner']['photo'], 'url');
+
+        // Internet plus tourism
+        $data['tourism_plus'] = $this->db->get_where('page', array('cid' => 48))->row_array();
+        $data['sub_banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(49, 50, 51, 52, 53, 54))->get('page')->result_array();
+        foreach ($data['sub_banners'] as $key => $banner) {
+            $data['sub_banners'][$key]['photo'] = tag_photo($banner['photo'], 'url');
+        }
+
+        // why Internet plus tourism
+        $data['why_plus'] = $this->db->get_where('page', array('cid' => 55))->row_array();
+        $data['why_plus']['photo'] = tag_photo($data['why_plus']['photo'], 'url');
+
+        // footer
+        $data['footer']['navigation'] = tag_single(29, 'content');
+        $data['footer']['icp'] = tag_single(30, 'content');
+        $data['footer']['mp'] = $this->db->get_where('page', array('cid' => 31))->row_array();
+        $data['footer']['mp']['photo'] = tag_photo($data['footer']['mp']['photo'], 'url');
+        $data['footer']['iso'] = tag_photo(tag_single(32, 'photo'));
 
         $this->load->view('tourism/index', $data);
-    }
-
-    protected function load($page = 1, $size = 6)
-    {
-        $data['tourism'] = array();
-        $data['link'] = '';
-
-        $where = array('audit' => 1, 'cid' => 21);
-        $row_count = $this->db->where($where)->from('article')->count_all_results();
-        $page_count = ceil($row_count / $size);
-        if ($page <= $page_count) {
-            $data['tourism'] = $this->db->where($where)->order_by("sort_id", "desc")->limit($size, ($page - 1) * $size)->get('article')->result_array();
-            $data['link'] = SITE_URL . 'tourism/more/' . ($page + 1) . '/' . $size;
-        }
-        return $data;
     }
 }
