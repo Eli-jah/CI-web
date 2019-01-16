@@ -12,8 +12,10 @@
         &.content_part_1 {
             background: url(../images/img/01_bgbg.jpg) center no-repeat;
             background-size: cover;
+            height: 630px;
             .text_content {
                 width: 440px;
+                height: 32%;
                 color: $white;
                 margin: auto;
                 margin-right: 0;
@@ -34,6 +36,7 @@
             }
             .img_content {
                 width: 35%;
+                height: 87%;
                 text-align: center;
                 margin: auto;
                 margin-left: 150px;
@@ -103,6 +106,7 @@
                     margin: auto;
                     margin-right: 5%;
                     width: 18%;
+                    height: 77%;
                     ul {
                         li {
                             height: 30px;

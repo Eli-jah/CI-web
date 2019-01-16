@@ -32,10 +32,7 @@ var swiper1 = new Swiper('#Ecommerce_part_2', {
 	  effect : 'fade',
 	  fadeEffect: {
         crossFade: true,
-      },
-//		  autoplay: {
-//		    delay: 3000,
-//		  },
+     },
 	  navigation: {
 	      nextEl: '.swiper-button-next',
 	      prevEl: '.swiper-button-prev',
@@ -43,7 +40,7 @@ var swiper1 = new Swiper('#Ecommerce_part_2', {
 });  
 
 //点击左侧切换右侧图标群
-$(".left_type_btns ul").on("click","li",function(){
+$(".left_type_btns ul").on("mouseenter","li",function(){
 	$(".left_type_btns ul").find("li").removeClass("active");
 	$(this).addClass("active");
 	var code = $(this).attr("code");
@@ -60,6 +57,9 @@ $(".left_type_btns_mobile ul li").click(function(){
 })
 //判断是否存在相应的dom节点调用相应 的方法以免其他页面报错
 $(function(){
+	if(document.getElementById("Ecommerce_part_1")){
+		parallax();
+	}
 	if(document.getElementById("Shortvideo_mousesheel")){
 		parallax();
 		Shortvideo();
@@ -190,9 +190,31 @@ function marketing(){
 
 //新闻资讯
 function news(){
+	//调用mock方法模拟数据
+		var Random = Mock.Random;
+		var dataarr = [];
+		var newsList = [];
+		for (var a = 1; a<=5;a++){
+			var dataobj_list = {
+				"name": Random.name(), //模拟名称
+		    	"date": Random.date('MM-dd'),  //模拟时间
+		    	"url": Random.url(),     //模拟url
+		    	"content": Random.cparagraph(), //模拟文本
+		    	"image": Random.image('200x100', '#894FC4', '#FFF', 'png', ''), //模拟图片
+			}
+			newsList.push(dataobj_list);
+		}
+		for(var i= 1;i<=5;i++){
+			var dataobj = {
+				"page": i,
+				"newsList": newsList
+			}
+			dataarr.push(dataobj);
+	  }
 	//页面初始化加载第一页新闻列表内容,页码page为1
 	var page = 1;
-	getnewsList();
+	getnewsList(page);
+	//新闻列表背景色取色
 	$(".news_content_lists_ul").on("mouseenter","li.for_show",function(event){
 		if (winW < 1200) return;
 		$(".news_content_lists_ul").find("li").removeClass("active");
@@ -202,8 +224,8 @@ function news(){
 		$.adaptiveBackground.run({
 			parent: $(".news_content"),
 			normalizedTextColors:  {
-			    light:      "#fff",
-			    dark:       "#fff"
+			    light: "#fff",
+			    dark: "#fff"
 			},
 		});
 	}).on("mouseleave", "li.for_show", function(event) {
@@ -211,45 +233,111 @@ function news(){
         $(".news_content_lists_ul").find("li").removeClass("active");
         $(".news_content_lists_ul").find("li").find("img").removeAttr("data-adaptive-background");
         $(".news_content").css("background-color","#fff");
-    })
-	//鼠标滚轮事件，向上滚动时调用上一页内容，向下滚动时调用下一页的新闻列表,列表每次展现数量为5,此效果仅限PC端展示
-	window.onload = function () {
-	   if (winW < 1200) return;
-	   var oDiv = document.getElementById('foronMouseWheel');
-	   function onMouseWheel(ev) {/*当鼠标滚轮事件发生时，执行一些操作*/
-	        var ev = ev || window.event;
-	        var down = true; // 定义一个标志，当滚轮向下滚时，执行一些操作
-	            down = ev.wheelDelta?ev.wheelDelta<0:ev.detail>0;
-	        if(down){
-	        	console.log("向下滚动，页码加一，获取下一页内容");
-	        }else{
-	        	console.log("向上滚动，页码减一，获取上一页内容");
-	        }
-	        if(ev.preventDefault){/*FF 和 Chrome*/
-	            ev.preventDefault();// 阻止默认事件
-	        }
-	        return false;
-	    }
-	  addEvent(oDiv,'mousewheel',onMouseWheel);
-	  addEvent(oDiv,'DOMMouseScroll',onMouseWheel);
-	  function addEvent(obj,xEvent,fn) {
-		    if(obj.attachEvent){
-		      obj.attachEvent('on'+xEvent,fn);
-		    }else{
-		      obj.addEventListener(xEvent,fn,false);
-		    }
-	  }
-	}
-	//点击arrowdown加载下一页内容
-	$(".arrowdown").click(function(){
-		alert("正在加载")
-	});
+   })
 	//获取新闻列表接口
-	function getnewsList(){
-		console.log("获取页面新闻列表");
+	function getnewsList(page){
+		var html = "";
+		var data = [];
+		for (var i=0;i< dataarr.length-1;i++) {
+			if(page == dataarr[i].page){
+				data =  dataarr[i].newsList;
+			}
+		}
+		if(data.length>0) {
+			$.each(data, function(i,n) {
+				html+="<li class='for_show'>"+
+						"<a href='new_show.php?name=资讯中心'>"+
+							"<div class='timeline-content'>"+
+						        "<div class='new_dateTime'>"+
+							        "<span>"+ n.date +"</span>"+
+							        "<span>2019</span>"+
+						        "</div>"+
+						        "<div class='new_info_content'>"+
+							        "<p class='new_title'>"+ n.name +"</p>"+
+							        "<p class='news_shortInfo'>"+ n.content +"</p>"+
+						        "</div>"+
+					        "</div>"+
+					        "<div class='bg_img'>"+
+				            "<img class='forTestRgba active' id='images' src='"+ n.image +"'>"+
+				            "</div>"+
+		                "</a>"+
+					"</li>"
+		    });
+		}
+		if (winW > 1200){
+			$("#foronMouseWheel").html("");
+		};
+		$("#foronMouseWheel").append(html);
+//		$.ajax({            
+//			url: "../news/api",    //请求的url地址
+//          dataType: "json",   //返回格式为json
+//          async: true, //请求是否异步，默认为异步，这也是ajax重要特性
+//          data: {
+//          	page:page
+//          },    //参数值
+//          type: "post",   //请求方式
+//          beforeSend : function() {
+//              //请求前的处理
+//          },
+//          success: function(data) {
+//              //请求成功时处理
+//              console.log(data);
+//              var html = "";
+//              if(data.length>0){
+//              	
+//              }else {
+//              	
+//              }
+//          },
+//          complete: function() {
+//              //请求完成的处理
+//          },
+//          error: function() {
+//              //请求出错处理
+//          }
+//      });
 	}
+    //请求加载更多新闻
+    $(".arrowdown").click(function(){
+    	if(page>=5){
+    		page = 5;
+    	}else {
+    		page+=1;
+    	}
+    	if(!$(".arrowup").hasClass("hadPre")) {
+    		$(".arrowup").addClass("hadPre");
+    		$(".arrowup").attr("disabled","flase");
+    	}
+    	getnewsList(page);
+    });
+    //返回上一页
+    $(".arrowup").click(function(event){
+    	if(page<=1){
+    		page = 1;
+    		$(this).removeClass("hadPre");
+    		$(".first_cricle").removeClass("dis_ni");
+    	}else {
+    		page-=1;
+    		if(page == 1){
+    		    $(this).removeClass("hadPre");
+    		    $(".first_cricle").removeClass("dis_ni");
+    		}
+    	}
+    	getnewsList(page);
+    })
+    //移动端加载更多
+    $(".forMoreLoad").click(function(){
+    	if(page>=5){
+    		page = 5;
+    	}else {
+    		page+=1;
+    	}
+    	getnewsList(page);
+    })
 }
 //关于我们
 function aboutUs(){
-	
+	$(".submit").click(function(){
+		
+	})
 }

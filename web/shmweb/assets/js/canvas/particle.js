@@ -187,5 +187,7 @@
 		this.ctx.clearRect(0, 0, canvasDom.width, canvasDom.height);
 	}
 
-	// go go go!
-	var particle = new Particles().init();
+	function particleinit(){
+		// go go go!
+		var particle = new Particles().init();
+	}

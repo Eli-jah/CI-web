@@ -12,8 +12,10 @@
          &.content_part_1 {
             background: url(../images/img/01_bg.jpg) center no-repeat;
             background-size: cover;
+            height: 630px;
             .text_content {
                 width: 415px;
+                height: 25%;
                 color: $Theme_color;
                 margin: auto;
                 margin-right: 0;
@@ -32,6 +34,7 @@
             }
             .img_content {
                 width: 35%;
+                height: 75%;
                 text-align: center;
                 margin: auto;
                 margin-left: 150px;

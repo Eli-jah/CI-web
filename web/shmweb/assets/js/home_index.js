@@ -36,6 +36,7 @@ $(document).ready(function() {
 					$(".header_menu span").css("border-color","#fff");
 					$(".local_name span").css("color","#fff");
 					$(".header_left").css("background","transparent");
+					$(".full_page1").addClass("active");
 		        }
 			}
 			if(nextIndex == '2') {
@@ -101,7 +102,7 @@ $(document).ready(function() {
 					$(".header_menu span").css("border-color","#344356");
 					$(".local_name span").css("color","#aaafb5");
 					$(".header_left").css("background","#fff");
-		        }
+		       }
 			}
 		}
 	});
@@ -160,6 +161,7 @@ $(function() {
 		  loop: true,
 		  speed: 800,
 		  effect : 'fade',
+		  preventInteractionOnTransition : true,
 		  fadeEffect: {
 	        crossFade: true,
 	      },
@@ -188,6 +190,7 @@ $(function() {
 		  loop: false,
 		  speed: 800,
 		  effect : 'fade',
+		  preventInteractionOnTransition : true,
 		  fadeEffect: {
 	        crossFade: true,
 	      },
@@ -214,6 +217,7 @@ $(function() {
 	    slidesPerView: 'auto',
         centeredSlides: true,
         spaceBetween: 30,
+        preventInteractionOnTransition : true,
 	    pagination: {
 	        el: '.page4-pagination',
 	        clickable: true,
@@ -225,7 +229,25 @@ $(function() {
 });
 
 //首屏第三屏的canvas
-init(document.getElementById('particle_wave'));
+$(function() {
+	//判断是否为移动端
+	if(!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+		//随机波浪
+		if (!!window.ActiveXObject || "ActiveXObject" in window){ 
+			return true; 
+		}else{ 
+			init(document.getElementById('particle_wave'));
+		}
+		if (navigator.userAgent.indexOf('Firefox') < 0) {
+			//随机灰尘
+			if (!!window.ActiveXObject || "ActiveXObject" in window){ 
+				return true; 
+			}else{ 
+				particleinit();
+			}
+		}
+	}
+})
 
 //首屏B2C与O2O的切换
 $(".change_box").on("click","a", function(){
@@ -243,7 +265,6 @@ $(".change_box").on("click","a", function(){
 		$(".logo_box .img2").css('opacity','0');
 		$(".header_menu span").css("border-color","#fff");
 		$(".local_name span").css("color","#fff");
-		$(".change_content").css("margin-top","150px");
 	}else {
 		$(".full_page3").addClass("parttwo_bg");
 		$(".full_page3").removeClass("partone_bg");
@@ -254,7 +275,6 @@ $(".change_box").on("click","a", function(){
 		$(".logo_box .img2").css('opacity','1');
 		$(".header_menu span").css("border-color","#344356");
 		$(".local_name span").css("color","#aaafb5");
-		$(".change_content").css("margin-top","70px");
 	}
 })
 

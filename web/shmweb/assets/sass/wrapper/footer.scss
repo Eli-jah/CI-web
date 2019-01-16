@@ -26,10 +26,16 @@ footer {
                         display: block;
                         color: #c6c6d1;
                         margin-bottom: 20px;
+                        &:hover {
+                            color: #fff;
+                        }
                     }
                     ul {
                         li {
                             margin: 10px 0;
+                            &:hover {
+                                color: #c6c6d1;
+                            }
                         }
                     }
                 }
