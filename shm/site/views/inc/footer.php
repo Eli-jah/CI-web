@@ -41,6 +41,12 @@ echo static_file("assets/js/wrapper/ecommerce_page.js");
 
 <!--地图-->
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tW416g6K9qLsCaR4gHOPkNfHkz9L4vG4"></script>
+
+<!--TODO ...-->
+<!--mock数据(开发环境下有效)-->
+<script type="text/javascript" src="/web/shmweb/assets/js/mock/mock.js"></script>
+<!--TODO ...-->
+
 <script type="text/javascript">
     // 创建和初始化地图函数：
     function initMap() {
@@ -68,7 +74,7 @@ echo static_file("assets/js/wrapper/ecommerce_page.js");
     }
     // 标注点数组
     var markerArr = [{
-        title: "青岛尚禾维曼科技有限公司",
+        title: "青岛尚禾维曼网络科技有限公司",
         content: "地址：中国山东省青岛市市北区敦化路328号诺德广场B座607",
         point: "120.387604|36.098572",
         isOpen: 1,

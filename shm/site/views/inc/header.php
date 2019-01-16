@@ -19,6 +19,8 @@
     echo static_file("assets/js/fullPage/css/fullPage.css");
     echo static_file("assets/fonts/iconfont.css");
     echo static_file("assets/css/style.css");
+
+    echo static_file("assets/js/base_loading.js");
     ?>
 
     <!--<script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?b1adbc20b757cd6750d05cbb489f30e7"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>-->
