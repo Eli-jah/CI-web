@@ -1,61 +1,19 @@
 <footer>
     <div id="footer-text">
         <div class="footer_up">
-            <ul>
-                <li>
-                    <span>首页</span>
-                    <ul>
-                        <li><a href="#">公司简介</a></li>
-                        <li><a href="#">企业营销解决方案</a></li>
-                        <li><a href="#">电商平台解决方案</a></li>
-                        <li><a href="#">旅游平台解决方案</a></li>
-                        <li><a href="#">视频流解决方案</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span>解决方案</span>
-                    <ul>
-                        <li><a href="#">企业营销解决方案</a></li>
-                        <li><a href="#">电商平台解决方案</a></li>
-                        <li><a href="#">旅游平台解决方案</a></li>
-                        <li><a href="#">旅游平台解决方案</a></li>
-                        <li><a href="#">视频流解决方案</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span>互联网资讯中心</span>
-                    <ul>
-                        <li><a href="#">企业营销解决方案</a></li>
-                        <li><a href="#">电商平台解决方案</a></li>
-                        <li><a href="#">旅游平台解决方案</a></li>
-                        <li><a href="#">旅游平台解决方案</a></li>
-                        <li><a href="#">视频流解决方案</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span>关于我们</span>
-                    <ul>
-                        <li><a href="#">公司介绍</a></li>
-                        <li><a href="#">发展历程</a></li>
-                        <li><a href="#">联系我们</a></li>
-                        <li><a href="#">加入我们</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <?php echo $footer['navigation']; ?>
             <div class="erwei_num">
                 <img src="/web/shmweb/assets/images/white_logo.png" class="footer_logo">
-                <img src="/web/shmweb/assets/images/wxnum.jpg" class="footer_erweima">
-                <span>关注尚禾维曼公众号</span>
+                <img src="<?php echo $footer['mp']['photo']; ?>" class="footer_erweima">
+                <span><?php echo $footer['mp']['intro']; ?></span>
             </div>
         </div>
         <div class="footer_down">
             <div class="copyright">
-                <p>© 2018 尚禾维曼 | 用户协议 | SLA | 服务状态</p>
-                <p>24小时违法和不良信息举报热线：021-20703838，举报邮箱：jubao@qiniu.com</p>
-                <p>沪公网安备 31011502000961 号 沪 ICP 备 11037377 号-5</p>
+                <?php echo $footer['icp']; ?>
             </div>
             <div class="iso">
-                <img src="/web/shmweb/assets/images/iso.png">
+                <img src="<?php echo $footer['iso']; ?>">
             </div>
         </div>
     </div>
