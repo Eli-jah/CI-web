@@ -50,13 +50,13 @@
                 <a href="<?php echo site_url(); ?>">首页</a>
             </li>
             <li class="more">
-                <a href="javascript:void(0)">解决方案 &or;</a>
+                <a href="javascript:void(0);">解决方案 &or;</a>
             </li>
             <li>
                 <a href="<?php echo site_url('news/index'); ?>">资讯中心</a>
             </li>
             <li>
-                <a href="<?php echo site_url('about/index'); ?>">关于我们</a>
+                <a href="<?php echo site_url('about/us'); ?>">关于我们</a>
             </li>
         </ul>
         <div class="child_menu" id="child_menu">
@@ -153,16 +153,16 @@
         <ul class="nav-list1">
             <li><a href="<?php echo site_url(); ?>">首页</a></li>
             <li class="mobile_more">
-                <a href="javascript:void(0)">解决方案</a>
+                <a href="javascript:void(0);">解决方案</a>
                 <ul class="nav-list4">
-                    <li><a href="<?php echo site_url('service/ecommerce'); ?>">电商平台解决方案</a></li>
+                    <li><a href="<?php echo site_url('ecommerce/index'); ?>">电商平台解决方案</a></li>
                     <li><a href="<?php echo site_url('tourism/index'); ?>">旅游平台解决方案</a></li>
                     <li><a href="<?php echo site_url('media/index'); ?>">视频流解决方案</a></li>
-                    <li><a href="<?php echo site_url('service/marketing'); ?>">企业营销解决方案</a></li>
+                    <li><a href="<?php echo site_url('marketing/index'); ?>">企业营销解决方案</a></li>
                 </ul>
             </li>
             <li><a href="<?php echo site_url('news/index'); ?>">资讯中心</a></li>
-            <li><a href="<?php echo site_url('about/index'); ?>">关于我们</a></li>
+            <li><a href="<?php echo site_url('about/us'); ?>">关于我们</a></li>
         </ul>
     </div>
 </header>
