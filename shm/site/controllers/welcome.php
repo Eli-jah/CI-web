@@ -11,6 +11,8 @@ class Welcome extends MY_Controller
     {
         parent::__construct();
 
+        $this->load->helpers('uisite_helper');
+
         $this->seo_id = 1;
         $this->banner_id = 2;
     }
@@ -18,6 +20,8 @@ class Welcome extends MY_Controller
     // 首页
     public function index()
     {
+        $data = array();
+
         // seo
         $data['header'] = header_seoinfo(0, 0);
 
