@@ -22,8 +22,8 @@
             <div class="section_content">
                 <div class="bgcanvas">
                     <!--用来存放canvas的地方，暂时先用图片占位一下-->
-                    <!--<canvas></canvas>-->
                     <img src="/web/shmweb/assets/images/banner/BGxian.png">
+                    <canvas></canvas>
                 </div>
                 <div class="swiper-container banner banner_content" id="page1_banner">
                     <div class="swiper-wrapper">
@@ -49,7 +49,8 @@
         <div class="section full_page2">
             <div class="section_content">
                 <div class="part_title">
-                    <?php echo $marketing['title']; ?>
+                    <h3><?php echo $marketing['title']['intro']; ?></h3>
+                    <?php echo $marketing['title']['content']; ?>
                 </div>
                 <div class="part2_banner">
                     <div class="swiper-container banner" id="page2_banner">
@@ -82,7 +83,8 @@
                 </div>
                 <div class="parttwo_bg_content">
                     <div class="part_title partone_bg_text">
-                        <?php echo $ecommerce['title']; ?>
+                        <h3><?php echo $ecommerce['title']['intro']; ?></h3>
+                        <?php echo $ecommerce['title']['content']; ?>
                     </div>
                     <div class="change_box">
                         <a href="javascript:void(0);" name="B2C" class="first_tip active">B2C</a>
@@ -117,7 +119,8 @@
                 </div>
                 <div class="page4_content">
                     <div class="part_title">
-                        <?php echo $tourism['title']; ?>
+                        <h3><?php echo $tourism['title']['intro']; ?></h3>
+                        <?php echo $tourism['title']['content']; ?>
                     </div>
                     <div class="banner_content">
                         <div class="swiper-container" id="page4_banner">
@@ -155,7 +158,8 @@
                 </div>
                 <div class="page5_content">
                     <div class="part_title">
-                        <?php echo $media['title']; ?>
+                        <h3><?php echo $media['title']['intro']; ?></h3>
+                        <?php echo $media['title']['content']; ?>
                     </div>
                     <div class="img_content">
                         <div class="content_left">

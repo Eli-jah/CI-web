@@ -35,27 +35,27 @@ class Welcome extends MY_Controller
         }
 
         // marketing
-        $data['marketing']['title'] = tag_single(5, 'content');
+        $data['marketing']['title'] = $this->db->get_where('page', array('cid' => 5))->row_array();
         $data['marketing']['banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(6, 7, 8, 9))->get('page')->result_array();
         foreach ($data['marketing']['banners'] as $key => $banner) {
             $data['marketing']['banners'][$key]['photo'] = tag_photo($banner['photo'], 'url');
         }
 
         // ecommerce
-        $data['ecommerce']['title'] = tag_single(11, 'content');
+        $data['ecommerce']['title'] =  $this->db->get_where('page', array('cid' => 11))->row_array();
         $data['ecommerce']['b2c'] = tag_single(12, 'content');
         $data['ecommerce']['o2o'] = $this->db->get_where('page', array('cid' => 13))->row_array();
         $data['ecommerce']['o2o']['photo'] = tag_photo($data['ecommerce']['o2o']['photo'], 'url');
 
         // tourism
-        $data['tourism']['title'] = tag_single(15, 'content');
+        $data['tourism']['title'] = $this->db->get_where('page', array('cid' => 15))->row_array();
         $data['tourism']['banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(16, 17, 18, 19))->get('page')->result_array();
         foreach ($data['tourism']['banners'] as $key => $banner) {
             $data['tourism']['banners'][$key]['photo'] = tag_photo($banner['photo'], 'url');
         }
 
         // media
-        $data['media']['title'] = tag_single(21, 'content');
+        $data['media']['title'] = $this->db->get_where('page', array('cid' => 21))->row_array();
         $data['media']['banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(22, 23, 24, 25, 26, 27))->get('page')->result_array();
         foreach ($data['media']['banners'] as $key => $banner) {
             $data['media']['banners'][$key]['photo'] = tag_photo($banner['photo'], 'url');

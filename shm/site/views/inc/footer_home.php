@@ -41,11 +41,11 @@ echo static_file("assets/js/bootstrap/js/respond.min.js");
 echo static_file("assets/js/sticky-sidebar.js");
 echo static_file("assets/main.js");
 echo static_file("assets/js/home_index.js");
+// <!--[if gt IE 7]>
+
+// <![endif]-->
 ?>
 
-<!--[if gt IE 7]>
-
-<![endif]-->
 <script>
 
 </script>

@@ -11,8 +11,8 @@ class Media extends MY_Controller
     {
         parent::__construct();
 
-        $this->seo_id = 31;
-        $this->banner_id = 32;
+        $this->seo_id = 56;
+        $this->banner_id = 57;
     }
 
     // 视频流解决方案
@@ -20,12 +20,34 @@ class Media extends MY_Controller
     {
         // seo
         $data['header'] = header_seoinfo($this->seo_id, 0);
-        $data['banner'] = tag_photo(tag_single($this->banner_id, "photo"));
 
-        // 新媒体营销
-        $data['marketing'] = tag_single(33, 'content');
-        // 亮点功能
-        $data['spotlight'] = tag_single(34, 'content');
+        // local name
+        $data['local_name'] = '视频流解决方案';
+
+        // banners
+        $data['banner'] = $this->db->get_where('page', array('cid' => $this->banner_id))->row_array();
+        $data['banner']['photo'] = tag_photo($data['banner']['photo'], 'url');
+
+        // pros
+        $data['pro'] = $this->db->get_where('page', array('cid' => 58))->row_array();
+        $data['pro_content'] = tag_single(59, 'content');
+
+        // features
+        $data['feature'] = $this->db->get_where('page', array('cid' => 60))->row_array();
+        $data['feature']['titles'] = explode('|', $data['feature']['intro']);
+
+        // media
+        $data['media']['banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(22, 23, 24, 25, 26, 27))->get('page')->result_array();
+        foreach ($data['media']['banners'] as $key => $banner) {
+            $data['media']['banners'][$key]['photo'] = tag_photo($banner['photo'], 'url');
+        }
+
+        // footer
+        $data['footer']['navigation'] = tag_single(29, 'content');
+        $data['footer']['icp'] = tag_single(30, 'content');
+        $data['footer']['mp'] = $this->db->get_where('page', array('cid' => 31))->row_array();
+        $data['footer']['mp']['photo'] = tag_photo($data['footer']['mp']['photo'], 'url');
+        $data['footer']['iso'] = tag_photo(tag_single(32, 'photo'));
 
         $this->load->view('media/index', $data);
     }
