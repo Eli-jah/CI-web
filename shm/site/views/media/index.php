@@ -37,15 +37,15 @@
                  data-wow-delay="0s">
                 <div class="img_content">
                     <div class="content_left">
-                        <?php foreach ($media['banners'] as $key => $banner): ?>
+                        <?php foreach ($feature_banners as $key => $feature_banner): ?>
                             <div class="content_left_item <?php echo $key === 0 ? 'active' : ''; ?>" code="0<?php echo($key + 1); ?>">
-                                <img src="<?php echo $banner['photo']; ?>">
+                                <img src="<?php echo $feature_banner['photo']; ?>">
                             </div>
                         <?php endforeach; ?>
                     </div>
                     <div class="content_center" id="foronMouseWheel">
                         <ul>
-                            <?php foreach ($media['banners'] as $key => $banner): ?>
+                            <?php foreach ($feature_banners as $key => $feature_banner): ?>
                                 <li class="<?php echo $key === 0 ? 'active' : ''; ?>" code="<?php echo($key + 1); ?>">
                                     <span>0<?php echo($key + 1); ?></span>
                                 </li>
@@ -56,11 +56,11 @@
                         <div class="show_tip_num">
                             <span>01</span>
                         </div>
-                        <?php foreach ($media['banners'] as $key => $banner): ?>
+                        <?php foreach ($feature_banners as $key => $feature_banner): ?>
                             <div class="small_part_title <?php echo $key === 0 ? 'active' : ''; ?>"
                                  code="0<?php echo($key + 1); ?>">
-                                <h4><?php echo $banner['intro']; ?></h4>
-                                <?php echo $banner['content']; ?>
+                                <h4><?php echo $feature_banner['intro']; ?></h4>
+                                <?php echo $feature_banner['content']; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>

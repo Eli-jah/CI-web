@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-// 新媒体运营
+// 视频流解决方案
 class Media extends MY_Controller
 {
     protected $seo_id;
@@ -24,7 +24,7 @@ class Media extends MY_Controller
         // local name
         $data['local_name'] = '视频流解决方案';
 
-        // banners
+        // banner
         $data['banner'] = $this->db->get_where('page', array('cid' => $this->banner_id))->row_array();
         $data['banner']['photo'] = tag_photo($data['banner']['photo'], 'url');
 
@@ -37,9 +37,9 @@ class Media extends MY_Controller
         $data['feature']['titles'] = explode('|', $data['feature']['intro']);
 
         // media
-        $data['media']['banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(22, 23, 24, 25, 26, 27))->get('page')->result_array();
-        foreach ($data['media']['banners'] as $key => $banner) {
-            $data['media']['banners'][$key]['photo'] = tag_photo($banner['photo'], 'url');
+        $data['feature_banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(22, 23, 24, 25, 26, 27))->get('page')->result_array();
+        foreach ($data['feature_banners'] as $key => $feature_banner) {
+            $data['feature_banners'][$key]['photo'] = tag_photo($feature_banner['photo'], 'url');
         }
 
         // footer

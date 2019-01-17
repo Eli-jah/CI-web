@@ -28,7 +28,7 @@ class Ecommerce extends MY_Controller
         // local name
         $data['local_name'] = '电商平台解决方案';
 
-        // banners
+        // banner
         $data['banner'] = $this->db->get_where('page', array('cid' => $this->banner_id))->row_array();
         $data['banner']['photo'] = tag_photo($data['banner']['photo'], 'url');
 
