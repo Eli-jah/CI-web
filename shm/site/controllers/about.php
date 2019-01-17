@@ -26,6 +26,11 @@ class About extends MY_Controller
     // 关于我们 + 公司简介 + 发展历程 + 联系我们
     public function us()
     {
+        $data = array();
+
+        // seo
+        $data['header'] = header_seoinfo($this->seo_id, 0);
+
         $this->seo_id = 40;
         $this->banner_id = 39;
 

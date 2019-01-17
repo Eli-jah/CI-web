@@ -42,10 +42,8 @@ echo static_file("assets/js/wrapper/ecommerce_page.js");
 <!--地图-->
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tW416g6K9qLsCaR4gHOPkNfHkz9L4vG4"></script>
 
-<!--TODO ...-->
 <!--mock数据(开发环境下有效)-->
-<script type="text/javascript" src="/web/shmweb/assets/js/mock/mock.js"></script>
-<!--TODO ...-->
+<!--<script type="text/javascript" src="/web/shmweb/assets/js/mock/mock.js"></script>-->
 
 <script type="text/javascript">
     // 创建和初始化地图函数：

@@ -18,6 +18,8 @@ class Media extends MY_Controller
     // 视频流解决方案
     public function index()
     {
+        $data = array();
+
         // seo
         $data['header'] = header_seoinfo($this->seo_id, 0);
 

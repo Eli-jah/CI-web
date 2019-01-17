@@ -190,30 +190,8 @@ function marketing(){
 
 //新闻资讯
 function news(){
-	//调用mock方法模拟数据
-		var Random = Mock.Random;
-		var dataarr = [];
-		var newsList = [];
-		for (var a = 1; a<=5;a++){
-			var dataobj_list = {
-				"name": Random.name(), //模拟名称
-		    	"date": Random.date('MM-dd'),  //模拟时间
-		    	"url": Random.url(),     //模拟url
-		    	"content": Random.cparagraph(), //模拟文本
-		    	"image": Random.image('200x100', '#894FC4', '#FFF', 'png', ''), //模拟图片
-			}
-			newsList.push(dataobj_list);
-		}
-		for(var i= 1;i<=5;i++){
-			var dataobj = {
-				"page": i,
-				"newsList": newsList
-			}
-			dataarr.push(dataobj);
-	  }
-	//页面初始化加载第一页新闻列表内容,页码page为1
-	var page = 1;
-	getnewsList(page);
+	var first_url = $(".news_content_lists").attr("data-request-url");
+	getnewsList(first_url);
 	//新闻列表背景色取色
 	$(".news_content_lists_ul").on("mouseenter","li.for_show",function(event){
 		if (winW < 1200) return;
@@ -235,104 +213,78 @@ function news(){
         $(".news_content").css("background-color","#fff");
    })
 	//获取新闻列表接口
-	function getnewsList(page){
-		var html = "";
-		var data = [];
-		for (var i=0;i< dataarr.length-1;i++) {
-			if(page == dataarr[i].page){
-				data =  dataarr[i].newsList;
-			}
-		}
-		if(data.length>0) {
-			$.each(data, function(i,n) {
-				html+="<li class='for_show'>"+
-						"<a href='new_show.php?name=资讯中心'>"+
-							"<div class='timeline-content'>"+
-						        "<div class='new_dateTime'>"+
-							        "<span>"+ n.date +"</span>"+
-							        "<span>2019</span>"+
+	function getnewsList(url){
+		$.ajax({            
+			url: url,    //请求的url地址
+            type: "post",   //请求方式
+            beforeSend : function() {},
+            success: function(data) {
+                var html = "";
+                var dataobj = data.news_data;
+                if(data.prev_page_url == false) {
+                	$(".arrowup").removeClass("hadPre");
+    				$(".first_cricle").removeClass("dis_ni");
+                }else {
+                	$(".getnewsList").attr("code",data.prev_page_url);
+                	$(".arrowup").attr("code",data.prev_page_url);
+                	$(".arrowup").addClass("hadPre");
+    				$(".first_cricle").addClass("dis_ni");
+                }
+                if(data.next_page_url == false){
+                	$(".arrowdown").addClass("dis_ni");
+                }else {
+                	$(".arrowdown").removeClass("dis_ni");
+                	$(".arrowdown").attr("code",data.next_page_url);
+                }
+                if(dataobj.length>0){
+                	$.each(dataobj, function(i,n) {
+						html+="<li class='for_show'>"+
+							"<a href='"+ n.link +"'>"+
+								"<div class='timeline-content'>"+
+							        "<div class='new_dateTime'>"+
+								        "<span>"+ n.date_time[1] +"</span>"+
+								        "<span>"+ n.date_time[0] +"</span>"+
+							        "</div>"+
+							        "<div class='new_info_content'>"+
+								        "<p class='new_title'>"+ n.title +"</p>"+
+								        "<p class='news_shortInfo'>"+ n.content +"</p>"+
+							        "</div>"+
 						        "</div>"+
-						        "<div class='new_info_content'>"+
-							        "<p class='new_title'>"+ n.name +"</p>"+
-							        "<p class='news_shortInfo'>"+ n.content +"</p>"+
-						        "</div>"+
-					        "</div>"+
-					        "<div class='bg_img'>"+
-				            "<img class='forTestRgba active' id='images' src='"+ n.image +"'>"+
-				            "</div>"+
-		                "</a>"+
-					"</li>"
-		    });
-		}
-		if (winW > 1200){
-			$("#foronMouseWheel").html("");
-		};
-		$("#foronMouseWheel").append(html);
-//		$.ajax({            
-//			url: "../news/api",    //请求的url地址
-//          dataType: "json",   //返回格式为json
-//          async: true, //请求是否异步，默认为异步，这也是ajax重要特性
-//          data: {
-//          	page:page
-//          },    //参数值
-//          type: "post",   //请求方式
-//          beforeSend : function() {
-//              //请求前的处理
-//          },
-//          success: function(data) {
-//              //请求成功时处理
-//              console.log(data);
-//              var html = "";
-//              if(data.length>0){
-//              	
-//              }else {
-//              	
-//              }
-//          },
-//          complete: function() {
-//              //请求完成的处理
-//          },
-//          error: function() {
-//              //请求出错处理
-//          }
-//      });
+						        "<div class='bg_img'>"+
+					            "<img class='forTestRgba active' id='images' src='"+ n.photo +"'>"+
+					            "</div>"+
+			                "</a>"+
+						"</li>"
+				    });
+				    if (winW > 1200){
+						$("#foronMouseWheel").html("");
+					};
+					$("#foronMouseWheel").append(html);
+                }else {
+                	
+                }
+            },
+            complete: function() {},
+            error: function(e) {
+            	console.log(e)
+                //请求出错处理
+            }
+        });
 	}
     //请求加载更多新闻
     $(".arrowdown").click(function(){
-    	if(page>=5){
-    		page = 5;
-    	}else {
-    		page+=1;
-    	}
-    	if(!$(".arrowup").hasClass("hadPre")) {
-    		$(".arrowup").addClass("hadPre");
-    		$(".arrowup").attr("disabled","flase");
-    	}
-    	getnewsList(page);
+    	var url = $(this).attr("code")
+    	getnewsList(url);
     });
     //返回上一页
     $(".arrowup").click(function(event){
-    	if(page<=1){
-    		page = 1;
-    		$(this).removeClass("hadPre");
-    		$(".first_cricle").removeClass("dis_ni");
-    	}else {
-    		page-=1;
-    		if(page == 1){
-    		    $(this).removeClass("hadPre");
-    		    $(".first_cricle").removeClass("dis_ni");
-    		}
-    	}
-    	getnewsList(page);
+    	var url = $(this).attr("code")
+    	getnewsList(url);
     })
     //移动端加载更多
     $(".forMoreLoad").click(function(){
-    	if(page>=5){
-    		page = 5;
-    	}else {
-    		page+=1;
-    	}
-    	getnewsList(page);
+    	var url = $(this).attr("code")
+    	getnewsList(url);
     })
 }
 //关于我们
