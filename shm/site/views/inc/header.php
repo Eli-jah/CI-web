@@ -16,7 +16,7 @@
     echo static_file("assets/js/animate.css/animate.min.css");
     // echo static_file("assets/js/jquery.fancybox/jquery.fancybox.css");
     echo static_file("assets/js/swiper/css/swiper.css");
-    echo static_file("assets/js/fullPage/css/fullPage.css");
+    echo static_file("assets/js/fullPage/css/fullpage.css");
     echo static_file("assets/fonts/iconfont.css");
     echo static_file("assets/css/style.css");
 

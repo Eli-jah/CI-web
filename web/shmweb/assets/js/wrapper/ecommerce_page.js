@@ -235,9 +235,11 @@ function news() {
                 }
                 if (data.next_page_url == false) {
                     $(".arrowdown").addClass("dis_ni");
+                    $(".forMoreLoad").addClass("dis_ni");
                 } else {
                     $(".arrowdown").removeClass("dis_ni");
                     $(".arrowdown").attr("code", data.next_page_url);
+                    $(".forMoreLoad").attr("code", data.next_page_url);
                 }
                 if (dataobj.length > 0) {
                     $.each(dataobj, function (i, n) {
