@@ -37,6 +37,9 @@ echo static_file("assets/main.js");
 // <!--图片取色器-->
 echo static_file("assets/js/jquery.adaptive-backgrounds.js");
 echo static_file("assets/js/wrapper/ecommerce_page.js");
+// <!-- For Ajax: $.cookie('_scfc') -->
+echo static_file("js/jquery.cookie.js");
+echo static_file("assets/js/layer/layer.js");
 ?>
 
 <!--地图-->

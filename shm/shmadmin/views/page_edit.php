@@ -27,7 +27,7 @@
             </div>
         <?php endif; ?>
 
-        <?php if (in_array($cid, array(5, 6, 7, 8, 9, 11, 13, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 31, 34, 35, 37, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 58, 60, 62, 63, 64, 65, 66, 67))): ?>
+        <?php if (in_array($cid, array(5, 6, 7, 8, 9, 11, 13, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 31, 34, 35, 37, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 58, 60, 62, 63, 64, 65, 66, 67, 72, 73))): ?>
             <div class="control-group">
                 <label for="intro" class="control-label">小标题</label>
                 <div class="controls">
@@ -37,7 +37,7 @@
             </div>
         <?php endif; ?>
 
-        <?php if (in_array($cid, array(2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 29, 30, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 62, 63, 64, 65, 66, 67))): ?>
+        <?php if (in_array($cid, array(2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 29, 30, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 62, 63, 64, 65, 66, 67, 72, 73))): ?>
             <div class="control-group">
                 <label for="title" class="control-label">PC版内容</label>
             </div>
@@ -59,7 +59,7 @@
         <?php endif; ?>
 
         <!-- 图片上传 -->
-        <?php if (in_array($cid, array(2, 3, 6, 7, 8, 9, 13, 16, 17, 18, 19, 22, 23, 24, 25, 26, 27, 31, 32, 34, 35, 37, 43, 44, 45, 47, 49, 50, 51, 52, 53, 54, 55, 57, 62, 63, 64, 65, 66, 67, 70))): ?>
+        <?php if (in_array($cid, array(2, 3, 6, 7, 8, 9, 13, 16, 17, 18, 19, 22, 23, 24, 25, 26, 27, 31, 32, 34, 35, 37, 43, 44, 45, 47, 49, 50, 51, 52, 53, 54, 55, 57, 62, 63, 64, 65, 66, 67, 70, 73))): ?>
             <div class="control-group">
                 <label for="img" class="control-label">图片：</label>
                 <div class="controls">
@@ -73,11 +73,11 @@
                                value="<?php echo $it['photo'] ?>">
                         <input type="hidden" name="thumb" class="form-upload-thumb" value="<?php echo $it['thumb'] ?>">
                     </div>
-                    <?php if (in_array($cid, array(15))): ?>
+                    <?php /*if (in_array($cid, array(15))): */?><!--
                         <span class="help-inline">最佳大小: 1920 * 900 像素</span>
-                    <?php else: ?>
+                    <?php /*else: */?>
                         <span class="help-inline">最佳大小: 1920 * 400 像素</span>
-                    <?php endif; ?>
+                    --><?php /*endif; */?>
                 </div>
             </div>
 

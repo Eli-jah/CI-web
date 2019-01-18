@@ -30,10 +30,10 @@
             <!--
                 此处需要ajax接口请求，每次请求返回的数量为5！！
                 -->
-            <?php $_ii = 0;
-            while ($_ii++ < 5): ?>
+            <?php /*$_ii = 0;
+            while ($_ii++ < 5): */?><!--
                 <li class="for_show">
-                    <a href="<?php echo site_url('news/show/' . $_ii) ?>">
+                    <a href="<?php /*echo site_url('news/show/' . $_ii) */?>">
                         <div class="timeline-content">
                             <div class="new_dateTime">
                                 <span>01-15</span>
@@ -51,7 +51,7 @@
                         </div>
                     </a>
                 </li>
-            <?php endwhile; ?>
+            --><?php /*endwhile; */?>
         </ul>
         <!--加载更多的隐藏内容-->
         <!--固定内容不需要更改-->

@@ -70,13 +70,13 @@ function cols_menu($cols = false){
 		</a>
 	</li>-->
 
-	<!--<li id='menu-feedback'>
-		<a href="<?php /*echo site_url('feedback') */?>">
-			<i class="fa fa-comments-o" title="<?php /*echo lang('feedback') */?>"></i>
-			<span class="i-title"> <?php /*echo lang('feedback') */?> </span>
+	<li id='menu-feedback'>
+		<a href="<?php echo site_url('feedback') ?>">
+			<i class="fa fa-comments-o" title="<?php echo lang('feedback') ?>"></i>
+			<span class="i-title"> <?php echo lang('feedback') ?> </span>
 			<div class="wp-menu-arrow"><div></div></div>
 		</a>
-	</li>-->
+	</li>
 
 	<!--<li id='menu-recruit_apply'>
 		<a href="<?php /*echo site_url('recruit_apply') */?>">

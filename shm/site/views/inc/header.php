@@ -14,13 +14,14 @@
     <?php
     echo static_file("assets/js/bootstrap/css/bootstrap.min.css");
     echo static_file("assets/js/animate.css/animate.min.css");
-    echo static_file("assets/js/jquery.fancybox/jquery.fancybox.css");
+    // echo static_file("assets/js/jquery.fancybox/jquery.fancybox.css");
     echo static_file("assets/js/swiper/css/swiper.css");
     echo static_file("assets/js/fullPage/css/fullPage.css");
     echo static_file("assets/fonts/iconfont.css");
     echo static_file("assets/css/style.css");
 
     echo static_file("assets/js/base_loading.js");
+    echo static_file("assets/js/layer/skin/layer.css");
     ?>
 
     <!--<script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?b1adbc20b757cd6750d05cbb489f30e7"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>-->
