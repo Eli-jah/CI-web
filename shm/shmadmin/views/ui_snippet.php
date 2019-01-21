@@ -10,7 +10,7 @@ div.btn-group>a.ban[href="<?php echo siteurl('controller/index')?>"]{返回列�
 
 for edit:
 
-div.boxed>h3{title}+form:post.form-horizontal#frm-create[action="<?php echo current_url()?>"  accept-charset="utf-8"]>div.boxed-inner.seamless{...}+div.boxed-footer>input:h[name="id" value="<?php echo \$it['id']?>"]+input:submit.btn.btn-primay[value="<?php echo lang('submit') ?>"]+input:reset.btn.btn-danger[value="<?php echo lang('reset') ?>"]
+div.boxed>h3{title}+form:post.form-horizontal#frm-create[action="<?php echo current_url()?>"  accept-charset="utf-8"]>div.boxed-inner.seamless{...}+div.boxed-footer>input:h[name="id" value="<?php echo \$it['id']?>"]+input:submit.btn.btn-primary[value="<?php echo lang('submit') ?>"]+input:reset.btn.btn-danger[value="<?php echo lang('reset') ?>"]
 
 text:
 
@@ -18,7 +18,7 @@ div.control-group>label.control-label[for="thename"]{thename}+div.controls>input
 
 for create:
 
-div.boxed>h3{title}+form:post.form-horizontal#frm-create[action="<?php echo current_url()?>"]>div.boxed-inner.seamless{...}+div.boxed-footer>+input:submit.btn.btn-primay[value="<?php echo lang('submit') ?>"]+input:reset.btn.btn-danger[value="<?php echo lang('reset') ?>"]
+div.boxed>h3{title}+form:post.form-horizontal#frm-create[action="<?php echo current_url()?>"]>div.boxed-inner.seamless{...}+div.boxed-footer>+input:submit.btn.btn-primary[value="<?php echo lang('submit') ?>"]+input:reset.btn.btn-danger[value="<?php echo lang('reset') ?>"]
 
 
 for input:text

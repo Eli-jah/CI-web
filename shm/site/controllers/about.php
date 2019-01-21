@@ -59,39 +59,67 @@ class About extends MY_Controller
         $data = array();
 
         if ($valid) {
-            if ($this->input->post('company') != '' && strlen($this->input->post('company')) < 100) {
+            if ($this->input->post('company') == '') {
+                $valid = false;
+                $data = array(
+                    'error' => '请填写公司名称！'
+                );
+            } else if (strlen($this->input->post('company')) > 100) {
+                $valid = false;
+                $data = array(
+                    'error' => '公司名称过长！'
+                );
+            } else {
                 $data['company'] = $this->input->post('company');
-            } else {
-                $valid = false;
-                $data = array(
-                    'error' => '请填写正确的公司名称'
-                );
             }
         }
 
         if ($valid) {
-            if ($this->input->post('username') != '') {
+            if ($this->input->post('username') == '') {
+                $valid = false;
+                $data = array(
+                    'error' => '请填写联系人姓名！'
+                );
+            } else if (strlen($this->input->post('username')) > 50) {
+                $valid = false;
+                $data = array(
+                    'error' => '联系人姓名过长！'
+                );
+            } else {
                 $data['username'] = $this->input->post('username');
-            } else {
-                $valid = false;
-                $data = array(
-                    'error' => '请填写正确的联系人姓名'
-                );
             }
         }
 
         if ($valid) {
-            if ($this->input->post('email') != '' && preg_match('/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/', $this->input->post('email'))) {
-                $data['email'] = $this->input->post('email');
-            } else {
+            if ($this->input->post('telphone') == '') {
                 $valid = false;
                 $data = array(
-                    'error' => '请填写正确的联系人邮箱'
+                    'error' => '请填写联系人联系方式！'
                 );
+            } else if (strlen($this->input->post('telphone')) > 50) {
+                $valid = false;
+                $data = array(
+                    'error' => '联系人联系方式过长！'
+                );
+            } else {
+                $data['telphone'] = $this->input->post('telphone');
             }
         }
 
         if ($valid) {
+            $data['content'] = $this->input->post('content');
+            /*if ($this->input->post('content') != '') {
+                $data['content'] = $this->input->post('content');
+            } else {
+                $valid = false;
+                $data = array(
+                    'error' => '请填写咨询内容！'
+                );
+            }*/
+        }
+
+        if ($valid) {
+            $data['timeline'] = now();
             $this->db->insert('feedback', $data);
             $data['code'] = 200;
             $this->output->set_content_type('application/json')->set_output(json_encode($data));

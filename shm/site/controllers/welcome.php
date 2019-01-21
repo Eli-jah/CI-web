@@ -29,8 +29,9 @@ class Welcome extends MY_Controller
         $data['local_name'] = '首页';
 
         // banners
-        $data['banners'] = $this->db->order_by('sort_id', 'asc')->where_in('cid', array(2, 3))->get('page')->result_array();
+        $data['banners'] = $this->db->order_by('sort_id', 'desc')->get_where('banners', array('audit' => 1, 'cid' => $this->banner_id))->result_array();
         foreach ($data['banners'] as $key => $banner) {
+            list($data['banners'][$key]['title'], $data['banners'][$key]['sub_title']) = explode('|', $banner['title']);
             $data['banners'][$key]['photo'] = tag_photo($banner['photo'], 'url');
         }
 

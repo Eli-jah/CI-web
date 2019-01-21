@@ -23,9 +23,9 @@
         </div>
     </div>
     <div class="news_content_info">
-        <div class="info_img">
-            <img class="forTestRgba" src="<?php echo $news['photo']; ?>">
-        </div>
+        <!--<div class="info_img">
+            <img class="forTestRgba" src="<?php /*echo $news['photo']; */?>">
+        </div>-->
         <div class="info_content">
             <?php echo $news['content']; ?>
         </div>

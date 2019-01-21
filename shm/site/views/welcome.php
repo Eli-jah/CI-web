@@ -31,7 +31,9 @@
                             <div class="swiper-slide dis_flex">
                                 <div class="text_content ani" swiper-animate-effect="fadeInLeft"
                                      swiper-animate-duration="0.2s" swiper-animate-delay="0s">
-                                    <?php echo $banner['content']; ?>
+                                    <h1><?php echo $banner['title']; ?></h1>
+                                    <h3><?php echo $banner['sub_title']; ?></h3>
+                                    <a class="view_details" href="<?php echo $banner['link']; ?>">查看详情</a>
                                 </div>
                                 <div class="img_content ani" swiper-animate-effect="fadeInRight"
                                      swiper-animate-duration="0.2s" swiper-animate-delay="0s">

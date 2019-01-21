@@ -32,17 +32,21 @@
                     <?php echo $contact_us['content']; ?>
                 </ul>
                 <div class="appointment_com">
-                    <span>公司</span>
+                    <span>公司名称</span>
                     <input name="company" id="feedback_company" class="appointment_com_in" placeholder="请输入公司名称">
                 </div>
                 <div class="appointment_name_mail">
                     <div class="appointment_name">
-                        <span>姓名</span>
+                        <span>联系人姓名</span>
                         <input name="username" id="feedback_username" class="appointment_com_in" placeholder="请输入您的姓名">
                     </div>
                     <div class="appointment_mail">
-                        <span>邮箱</span>
-                        <input name="email" id="feedback_email" class="appointment_com_in" placeholder="请输入您的邮箱地址">
+                        <span>联系方式</span>
+                        <input name="telphone" id="feedback_telphone" class="appointment_com_in" placeholder="请输入您的联系方式">
+                    </div>
+                    <div class="appointment_mail">
+                        <span>咨询内容</span>
+                        <input name="content" id="feedback_content" class="appointment_com_in" placeholder="请输入您的咨询内容">
                     </div>
                 </div>
                 <p>24小时内回访人员马上联系您</p>

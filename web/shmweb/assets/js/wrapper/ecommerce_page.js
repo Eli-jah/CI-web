@@ -298,13 +298,21 @@ function news() {
 //关于我们
 function aboutUs() {
     $(".submit").click(function () {
-        var company = $('#feedback_company'), username = $('#feedback_username'), email = $('#feedback_email');
+        var company = $('#feedback_company'), username = $('#feedback_username'), telphone = $('#feedback_telphone'), content = $('#feedback_content');
         if (company.val() == "") {
             if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
                 alert("请填写公司名称!");
                 return false;
             } else {
                 layer.alert('请填写公司名称!');
+                return false;
+            }
+        } else if (company.val().length > 100) {
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                alert("公司名称过长!");
+                return false;
+            } else {
+                layer.alert('公司名称过长!');
                 return false;
             }
         }
@@ -316,38 +324,51 @@ function aboutUs() {
                 layer.alert('请填写联系人名称!');
                 return false;
             }
-        }
-        if (email.val() == "") {
+        } else if (username.val().length > 50) {
             if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                alert("请填写联系邮箱!");
+                alert("联系人名称过长!");
                 return false;
             } else {
-                layer.alert('请填写联系邮箱!');
+                layer.alert('联系人名称过长!');
                 return false;
             }
-        } else {
-            // var reg = new RegExp('/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/', 'gi');
-            var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/gi;
-            var is_ok = reg.test(email.val());
-            if (!is_ok) {
-                if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                    alert("请填写正确有效的邮箱!");
-                    return false;
-                } else {
-                    layer.alert('请填写正确有效的邮箱!');
-                    return false;
-                }
+        }
+        if (telphone.val() == "") {
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                alert("请填写联系方式!");
+                return false;
+            } else {
+                layer.alert('请填写联系方式!');
+                return false;
+            }
+        } else if (telphone.val().length > 50) {
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                alert("联系方式过长!");
+                return false;
+            } else {
+                layer.alert('联系方式过长!');
+                return false;
             }
         }
+        /*if (content.val() == "") {
+         if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+         alert("请填写咨询内容!");
+         return false;
+         } else {
+         layer.alert('请填写咨询内容!');
+         return false;
+         }
+         }*/
         var data = {
             company: company.val(),
             username: username.val(),
-            email: email.val(),
+            telphone: telphone.val(),
+            content: content.val(),
             _scfs: $.cookie('_scfc'),
         };
         $.ajax({
             url: $(".aboutUs_content .content_part_3").attr("data-request-url"),
-            type: "post",   //请求方式
+            type: "post", // 请求方式
             data: data,
             beforeSend: function () {
             },
@@ -360,7 +381,8 @@ function aboutUs() {
                     }
                     company.val('');
                     username.val('');
-                    email.val('');
+                    telphone.val('');
+                    content.val('');
                 }
                 if (data.code == 422) {
                     var error = data.error;
@@ -375,7 +397,7 @@ function aboutUs() {
             },
             error: function (e) {
                 console.log(e);
-                //请求出错处理
+                // 请求出错处理
             }
         });
     })

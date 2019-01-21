@@ -90,7 +90,7 @@ class CI_Security
      * @access protected
      */
     protected $_never_allowed_regex = array(
-        'javascript\s*:',
+        // 'javascript\s*:',
         'expression\s*(\(|&\#40;)', // CSS and IE
         'vbscript\s*:', // IE, surprise!
         'Redirect\s+302',
