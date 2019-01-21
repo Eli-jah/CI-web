@@ -58,6 +58,7 @@ class About extends MY_Controller
         $valid = true;
         $data = array();
 
+        // 公司名称
         if ($valid) {
             if ($this->input->post('company') == '') {
                 $valid = false;
@@ -74,6 +75,7 @@ class About extends MY_Controller
             }
         }
 
+        // 联系人姓名
         if ($valid) {
             if ($this->input->post('username') == '') {
                 $valid = false;
@@ -90,22 +92,24 @@ class About extends MY_Controller
             }
         }
 
+        // 联系人电话
         if ($valid) {
             if ($this->input->post('telphone') == '') {
                 $valid = false;
                 $data = array(
-                    'error' => '请填写联系人联系方式！'
+                    'error' => '请填写联系人电话！'
                 );
             } else if (strlen($this->input->post('telphone')) > 50) {
                 $valid = false;
                 $data = array(
-                    'error' => '联系人联系方式过长！'
+                    'error' => '联系人电话过长！'
                 );
             } else {
                 $data['telphone'] = $this->input->post('telphone');
             }
         }
 
+        // 您要咨询的内容
         if ($valid) {
             $data['content'] = $this->input->post('content');
             /*if ($this->input->post('content') != '') {

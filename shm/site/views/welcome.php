@@ -211,7 +211,7 @@
                         <?php echo $footer['icp']; ?>
                     </div>
                     <div class="iso">
-                        <img src="<?php echo $footer['iso']; ?>">
+                        <img src="/web/shmweb/assets/images/telephone_white2.png">
                     </div>
                 </div>
             </div>

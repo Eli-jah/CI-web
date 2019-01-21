@@ -2,7 +2,7 @@ var $win = $(window),
     $doc = $(document),
     $body = $('body', $doc),
     winW = $win.width();
-//视差效果
+// 视差效果
 function parallax() {
     if ($win.width() > 992) {
         if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
@@ -24,7 +24,7 @@ function parallax() {
     }
 }
 
-//轮播图
+// 轮播图
 var swiper1 = new Swiper('#Ecommerce_part_2', {
     centeredSlides: true,
     loop: false,
@@ -39,7 +39,7 @@ var swiper1 = new Swiper('#Ecommerce_part_2', {
     },
 });
 
-//点击左侧切换右侧图标群
+// 点击左侧切换右侧图标群
 $(".left_type_btns ul").on("mouseenter", "li", function () {
     $(".left_type_btns ul").find("li").removeClass("active");
     $(this).addClass("active");
@@ -47,15 +47,15 @@ $(".left_type_btns ul").on("mouseenter", "li", function () {
     $(".right_type_icons").find(".icons_box").removeClass("active");
     $(".right_type_icons").find(".icons_box[code='" + code + "']").addClass("active");
 });
-//移动端切换图标
+// 移动端切换图标
 $(".left_type_btns_mobile ul li").click(function () {
     $(".left_type_btns_mobile ul").find("li").removeClass("active");
     $(this).addClass("active");
     var code = $(this).attr("code");
     $(".right_type_icons").find(".icons_box").removeClass("active");
     $(".right_type_icons").find(".icons_box[code='" + code + "']").addClass("active");
-})
-//判断是否存在相应的dom节点调用相应 的方法以免其他页面报错
+});
+// 判断是否存在相应的dom节点调用相应 的方法以免其他页面报错
 $(function () {
     if (document.getElementById("Ecommerce_part_1")) {
         parallax();
@@ -79,9 +79,9 @@ $(function () {
     }
 });
 
-//视频流页面解决方法
+// 视频流页面解决方法
 function Shortvideo() {
-    //视频流滚动与点击
+    // 视频流滚动与点击
     var page5_index = 1;
     $(".content_center li").on("click", function () {
         $(".content_center").find("li").removeClass("active");
@@ -148,8 +148,8 @@ function Shortvideo() {
                     $(".content_right").find(".small_part_title[code='" + code + "']").addClass("active");
                 }
             }
-            if (ev.preventDefault) {/*FF 和 Chrome*/
-                ev.preventDefault();// 阻止默认事件
+            if (ev.preventDefault) { /*FF 和 Chrome*/
+                ev.preventDefault(); // 阻止默认事件
             }
             return false;
         }
@@ -166,7 +166,7 @@ function Shortvideo() {
     }
 }
 
-//旅游解决方案
+// 旅游解决方案
 function tourism() {
     window.onload = function () {
         $("#Tourism_lists").find("li[code='1']").addClass("active");
@@ -181,7 +181,7 @@ function tourism() {
     });
 }
 
-//企业营销解决方案
+// 企业营销解决方案
 function marketing() {
     $("#importance_parts").on("mouseenter", ".import_item", function (event) {
         if (winW < 1200) return;
@@ -190,11 +190,11 @@ function marketing() {
     })
 }
 
-//新闻资讯
+// 新闻资讯
 function news() {
     var first_url = $(".news_content_lists").attr("data-request-url");
     getnewsList(first_url);
-    //新闻列表背景色取色
+    // 新闻列表背景色取色
     $(".news_content_lists_ul").on("mouseenter", "li.for_show", function (event) {
         if (winW < 1200) return;
         $(".news_content_lists_ul").find("li").removeClass("active");
@@ -213,12 +213,12 @@ function news() {
         $(".news_content_lists_ul").find("li").removeClass("active");
         $(".news_content_lists_ul").find("li").find("img").removeAttr("data-adaptive-background");
         $(".news_content").css("background-color", "#fff");
-    })
-    //获取新闻列表接口
+    });
+    // 获取新闻列表接口
     function getnewsList(url) {
         $.ajax({
-            url: url,    //请求的url地址
-            type: "get",   //请求方式
+            url: url, // 请求的url地址
+            type: "get", // 请求方式
             beforeSend: function () {
             },
             success: function (data) {
@@ -273,29 +273,29 @@ function news() {
             },
             error: function (e) {
                 console.log(e);
-                //请求出错处理
+                // 请求出错处理
             }
         });
     }
 
-    //请求加载更多新闻
+    // 请求加载更多新闻
     $(".arrowdown").click(function () {
         var url = $(this).attr("code");
         getnewsList(url);
     });
-    //返回上一页
+    // 返回上一页
     $(".arrowup").click(function (event) {
         var url = $(this).attr("code");
         getnewsList(url);
     });
-    //移动端加载更多
+    // 移动端加载更多
     $(".forMoreLoad").click(function () {
         var url = $(this).attr("code");
         getnewsList(url);
     });
 }
 
-//关于我们
+// 关于我们
 function aboutUs() {
     $(".submit").click(function () {
         var company = $('#feedback_company'), username = $('#feedback_username'), telphone = $('#feedback_telphone'), content = $('#feedback_content');
@@ -335,10 +335,10 @@ function aboutUs() {
         }
         if (telphone.val() == "") {
             if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                alert("请填写联系方式!");
+                alert("请填写联系人电话!");
                 return false;
             } else {
-                layer.alert('请填写联系方式!');
+                layer.alert('请填写联系人电话!');
                 return false;
             }
         } else if (telphone.val().length > 50) {
@@ -398,7 +398,7 @@ function aboutUs() {
             error: function (e) {
                 console.log(e);
                 // 请求出错处理
-            }
+            },
         });
-    })
+    });
 }

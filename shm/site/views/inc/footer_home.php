@@ -15,7 +15,7 @@
                 <?php echo $footer['icp']; ?>
             </div>
             <div class="iso">
-                <img src="<?php echo $footer['iso']; ?>">
+                <img src="/web/shmweb/assets/images/telephone_white2.png">
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@ echo static_file("assets/js/jquery-2.1.4.min.js");
 echo static_file("assets/js/fullPage/js/jquery.fullPage.js");
 echo static_file("assets/js/jquery.lazyload/jquery.lazyload.min.js");
 // <!--窗口弹出插件-->
-echo static_file("assets/js/swiper/js/swiper.js");
+echo static_file("assets/js/swiper/js/swiper.min.js");
 echo static_file("assets/js/swiper/js/swiper.animate.min.js");
 echo static_file("assets/js/wow.min.js");
 // <!--首屏全屏及首屏波浪插件-->

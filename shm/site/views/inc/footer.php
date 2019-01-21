@@ -13,7 +13,7 @@
                 <?php echo $footer['icp']; ?>
             </div>
             <div class="iso">
-                <img src="<?php echo $footer['iso']; ?>">
+                <img src="/web/shmweb/assets/images/telephone_white2.png">
             </div>
         </div>
     </div>
@@ -23,10 +23,10 @@
 
 <?php
 echo static_file("assets/js/jquery-2.1.4.min.js");
-echo static_file("assets/js/jquery.lazyload/jquery.lazyload.min.js");
+//echo static_file("assets/js/jquery.lazyload/jquery.lazyload.min.js");
 // <!--窗口弹出插件-->
 // <!--<script src="assets/js/jquery.fancybox/jquery.fancybox.min.js"></script>-->
-echo static_file("assets/js/swiper/js/swiper.js");
+echo static_file("assets/js/swiper/js/swiper.min.js");
 echo static_file("assets/js/swiper/js/swiper.animate.min.js");
 echo static_file("assets/js/wow.min.js");
 // <!-- ie8 bootstrap -->
@@ -45,8 +45,6 @@ echo static_file("assets/js/layer/layer.js");
 <!--地图-->
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tW416g6K9qLsCaR4gHOPkNfHkz9L4vG4"></script>
 
-<!--mock数据(开发环境下有效)-->
-<!--<script type="text/javascript" src="/web/shmweb/assets/js/mock/mock.js"></script>-->
 
 <script type="text/javascript">
     // 创建和初始化地图函数：

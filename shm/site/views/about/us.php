@@ -38,16 +38,16 @@
                 <div class="appointment_name_mail">
                     <div class="appointment_name">
                         <span>联系人姓名</span>
-                        <input name="username" id="feedback_username" class="appointment_com_in" placeholder="请输入您的姓名">
+                        <input name="username" id="feedback_username" class="appointment_com_in" placeholder="请输入联系人姓名">
                     </div>
                     <div class="appointment_mail">
-                        <span>联系方式</span>
-                        <input name="telphone" id="feedback_telphone" class="appointment_com_in" placeholder="请输入您的联系方式">
+                        <span>联系人电话</span>
+                        <input name="telphone" id="feedback_telphone" class="appointment_com_in" placeholder="请输入联系人电话">
                     </div>
-                    <div class="appointment_mail">
-                        <span>咨询内容</span>
-                        <input name="content" id="feedback_content" class="appointment_com_in" placeholder="请输入您的咨询内容">
-                    </div>
+                </div>
+                <div class="appointment_question">
+                    <span>您要咨询的内容</span>
+                    <textarea name="content" id="feedback_content" class="appointment_com_in" placeholder="请输入您要咨询的内容"></textarea>
                 </div>
                 <p>24小时内回访人员马上联系您</p>
                 <button class="submit">提交</button>

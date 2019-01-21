@@ -15,8 +15,8 @@
     echo static_file("assets/js/bootstrap/css/bootstrap.min.css");
     echo static_file("assets/js/animate.css/animate.min.css");
     // echo static_file("assets/js/jquery.fancybox/jquery.fancybox.css");
-    echo static_file("assets/js/swiper/css/swiper.css");
-    echo static_file("assets/js/fullPage/css/fullpage.css");
+    echo static_file("assets/js/swiper/css/swiper.min.css");
+    echo static_file("assets/js/fullPage/css/fullPage.min.css");
     echo static_file("assets/fonts/iconfont.css");
     echo static_file("assets/css/style.css");
 
@@ -24,7 +24,15 @@
     echo static_file("assets/js/layer/skin/layer.css");
     ?>
 
-    <!--<script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?b1adbc20b757cd6750d05cbb489f30e7"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b1adbc20b757cd6750d05cbb489f30e7";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
 <header id="header" class="normal_page">
@@ -57,7 +65,7 @@
                 <a href="<?php echo site_url('news/index'); ?>">资讯中心</a>
             </li>
             <li>
-                <a href="<?php echo site_url('about/us'); ?>">关于我们</a>
+                <a href="<?php echo site_url('about/us'); ?>">联系我们</a>
             </li>
         </ul>
         <div class="child_menu" id="child_menu">
@@ -145,6 +153,10 @@
             </ul>
         </div>
     </div>
+    <div class="com_phone">
+        <img src="/web/shmweb/assets/images/telephone_white2.png" class="img1">
+        <img src="/web/shmweb/assets/images/telephone2.png" class="img2">
+    </div>
     <!--隐藏菜单移动端显示-->
     <div class="mobile_menu">
         <button id="nav-xs-btn">
@@ -163,7 +175,7 @@
                 </ul>
             </li>
             <li><a href="<?php echo site_url('news/index'); ?>">资讯中心</a></li>
-            <li><a href="<?php echo site_url('about/us'); ?>">关于我们</a></li>
+            <li><a href="<?php echo site_url('about/us'); ?>">联系我们</a></li>
         </ul>
     </div>
 </header>
